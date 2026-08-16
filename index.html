@@ -1,946 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HelloDot ♡</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box}
+  <title>Hellodot ♡ Handmade Press-On Nails</title>
 
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:#fff8f5;
-  color:#171316;
-  font-family:Arial,sans-serif;
-  overflow-x:hidden;
-}
-
-/* ---------- COLORS ---------- */
-:root{
-  --pink:#ef7192;
-  --lightpink:#f8b8c8;
-  --pale:#fff3f5;
-  --cream:#fffaf7;
-  --line:#f3b8c8;
-}
-
-/* ---------- BACKGROUND DOTS ---------- */
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-2;
-  opacity:.45;
-  background-image:radial-gradient(#f4aabd 2px,transparent 2px);
-  background-size:38px 38px;
-}
-
-/* ---------- LADYBUGS ---------- */
-.bug{
-  position:fixed;
-  width:38px;
-  height:38px;
-  z-index:50;
-  pointer-events:none;
-}
-
-.bug-body{
-  position:absolute;
-  width:27px;
-  height:30px;
-  left:6px;
-  top:6px;
-  background:#e74f62;
-  border:2px solid #191316;
-  border-radius:50%;
-}
-
-.bug-head{
-  position:absolute;
-  width:14px;
-  height:11px;
-  left:12px;
-  top:1px;
-  background:#171316;
-  border-radius:50%;
-}
-
-.bug-line{
-  position:absolute;
-  width:2px;
-  height:25px;
-  background:#171316;
-  left:19px;
-  top:8px;
-  z-index:3;
-}
-
-.dot{
-  position:absolute;
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#171316;
-  z-index:4;
-}
-
-.d1{left:10px;top:13px}
-.d2{left:22px;top:13px}
-.d3{left:10px;top:22px}
-.d4{left:22px;top:22px}
-
-.b1{top:14%;left:4%;animation:fly1 18s infinite ease-in-out}
-.b2{top:19%;right:5%;animation:fly2 21s infinite ease-in-out}
-.b3{top:46%;left:6%;animation:fly3 19s infinite ease-in-out}
-.b4{top:70%;right:5%;animation:fly4 22s infinite ease-in-out}
-.b5{bottom:8%;left:47%;animation:fly5 20s infinite ease-in-out}
-
-@keyframes fly1{
-  0%,100%{transform:translate(0) rotate(-5deg)}
-  50%{transform:translate(100px,90px) rotate(12deg)}
-}
-@keyframes fly2{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(-100px,100px) rotate(-12deg)}
-}
-@keyframes fly3{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(90px,-50px) rotate(10deg)}
-}
-@keyframes fly4{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(-90px,-90px) rotate(-10deg)}
-}
-@keyframes fly5{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(100px,-50px) rotate(10deg)}
-}
-
-/* ---------- HEADER ---------- */
-header{
-  height:115px;
-  background:#fffaf8;
-  border-bottom:1px solid #f2ccd5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  z-index:20;
-}
-
-nav{
-  position:absolute;
-  left:6%;
-  display:flex;
-  gap:38px;
-}
-
-nav a{
-  color:#111;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:1px;
-}
-
-nav a:hover{color:var(--pink)}
-
-.header-logo{
-  position:absolute;
-  top:-58px;
-  width:195px;
-  height:195px;
-  border-radius:50%;
-  background:#fffaf8;
-  border:3px solid #f5c1ce;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 5px 20px rgba(230,100,130,.08);
-}
-
-.header-logo .brand{
-  font-family:Georgia,serif;
-  font-size:34px;
-}
-
-.header-logo .mini{
-  font-size:7px;
-  letter-spacing:3px;
-  margin-top:7px;
-}
-
-.header-logo .spark{
-  color:var(--pink);
-}
-
-/* ---------- HERO ---------- */
-.hero{
-  min-height:520px;
-  padding:120px 20px 70px;
-  text-align:center;
-  position:relative;
-}
-
-.hero h1{
-  font-family:Georgia,serif;
-  font-weight:400;
-  font-size:clamp(70px,10vw,120px);
-  margin:0;
-  letter-spacing:-5px;
-}
-
-.hero h1 span{color:#ef9fb5}
-
-.hero-sub{
-  margin-top:12px;
-  font-size:11px;
-  letter-spacing:7px;
-  font-weight:bold;
-}
-
-.sparkle{
-  color:var(--pink);
-  font-size:28px;
-}
-
-.hero p{
-  max-width:520px;
-  margin:30px auto;
-  font-size:16px;
-  line-height:1.6;
-}
-
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.button{
-  display:inline-block;
-  padding:14px 31px;
-  border-radius:40px;
-  background:var(--pink);
-  color:white !important;
-  text-decoration:none !important;
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:1px;
-  border:2px solid var(--pink);
-}
-
-.button.outline{
-  background:#fffaf8;
-  color:var(--pink) !important;
-}
-
-/* ---------- GENERAL ---------- */
-.section{
-  padding:65px 5%;
-  max-width:1200px;
-  margin:auto;
-}
-
-.heading{text-align:center}
-
-.eyebrow{
-  color:var(--pink);
-  font-size:10px;
-  letter-spacing:4px;
-  font-weight:bold;
-}
-
-h2{
-  font-family:Georgia,serif;
-  font-weight:400;
-  color:var(--pink);
-  font-size:45px;
-  margin:8px 0 30px;
-}
-
-/* ---------- CORE 4 ---------- */
-#core4{
-  background:#fff1f4;
-  max-width:none;
-  border-top:1px solid #f4ccd7;
-  border-bottom:1px solid #f4ccd7;
-}
-
-.core-inner{
-  max-width:1200px;
-  margin:auto;
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:22px;
-}
-
-.product{
-  background:#fffaf8;
-  border:2px solid #f3b3c4;
-  border-radius:18px;
-  padding:10px;
-  text-align:center;
-}
-
-.photo{
-  width:100%;
-  height:275px;
-  background:#f8e6ea;
-  border-radius:13px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-.photo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.product h3{
-  font-family:Georgia,serif;
-  font-size:20px;
-  margin:16px 0 5px;
-}
-
-.price{
-  color:var(--pink);
-  font-weight:bold;
-  font-size:16px;
-}
-
-.length{
-  display:inline-block;
-  background:#fbdce5;
-  color:#d95779;
-  border-radius:20px;
-  padding:6px 13px;
-  margin:10px 0 14px;
-  font-size:9px;
-  font-weight:bold;
-}
-
-.product .button{
-  padding:10px 20px;
-  font-size:9px;
-}
-
-/* ---------- CUSTOM + SIZING ---------- */
-.two-columns{
-  max-width:1200px;
-  margin:auto;
-  padding:65px 5%;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.box{
-  background:#fffaf8;
-  border:2px solid #f4bdca;
-  border-radius:22px;
-  padding:35px 30px;
-  text-align:center;
-}
-
-.box h2{
-  margin-bottom:10px;
-}
-
-.box p{
-  font-size:13px;
-  line-height:1.6;
-}
-
-.addons{
-  margin:25px auto;
-  max-width:450px;
-}
-
-.addon{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px dotted #dfa2b2;
-  padding:8px 0;
-  font-size:12px;
-}
-
-.addon strong{color:var(--pink)}
-
-/* ---------- SIZING ---------- */
-.steps{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin:25px 0;
-}
-
-.step{
-  background:#fff1f4;
-  border-radius:18px;
-  padding:20px 10px;
-}
-
-.number{
-  margin:auto;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  background:var(--pink);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  font-size:11px;
-}
-
-.step h3{
-  font-family:Georgia,serif;
-  color:#222;
-  font-size:17px;
-}
-
-.step p{
-  font-size:12px;
-}
-
-/* ---------- DETAILS ---------- */
-.details{
-  display:none;
-  text-align:center;
-  background:#fff1f4;
-  border:2px solid #f3bdcb;
-  border-radius:25px;
-  padding:30px;
-  margin:0 auto 25px;
-  max-width:700px;
-}
-
-.details:target{display:block}
-
-.details h3{
-  font-family:Georgia,serif;
-  color:var(--pink);
-  font-size:30px;
-}
-
-/* ---------- ORDER ---------- */
-.order{
-  background:#fff1f4;
-  border-top:1px solid #f2ccd5;
-  border-bottom:1px solid #f2ccd5;
-  text-align:center;
-  padding:40px 20px;
-}
-
-.order h2{margin-bottom:10px}
-
-/* ---------- INFO ---------- */
-.info{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  text-align:center;
-}
-
-.info-card{
-  padding:20px;
-  border-right:1px solid #efc6d1;
-}
-
-.info-card:last-child{border:0}
-
-.info-icon{
-  width:55px;
-  height:55px;
-  background:#f7b7c8;
-  color:white;
-  border-radius:50%;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-}
-
-.info-card h3{
-  letter-spacing:2px;
-  font-size:12px;
-}
-
-.info-card p{
-  font-size:11px;
-  line-height:1.5;
-}
-
-/* ---------- FOOTER ---------- */
-footer{
-  background:#f6b4c5;
-  padding:45px 20px;
-  text-align:center;
-}
-
-.footer-logo{
-  font-family:Georgia,serif;
-  font-size:35px;
-}
-
-footer a{
-  color:#222;
-  text-decoration:none;
-  margin:0 10px;
-  font-size:12px;
-}
-
-/* ---------- MOBILE ---------- */
-@media(max-width:950px){
-  .products{grid-template-columns:repeat(2,1fr)}
-  nav{gap:15px;left:3%}
-}
-
-@media(max-width:650px){
-  header{height:90px}
-  .header-logo{width:125px;height:125px;top:-35px}
-  .header-logo .brand{font-size:23px}
-  .header-logo .mini{font-size:5px}
-  nav{display:none}
-  .hero{padding-top:90px}
-  .hero h1{font-size:65px}
-  .hero-sub{font-size:8px;letter-spacing:4px}
-  .products{grid-template-columns:1fr}
-  .photo{height:310px}
-  .two-columns{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .info{grid-template-columns:1fr}
-  .info-card{border-right:0;border-bottom:1px solid #efc6d1}
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- LADYBUG 1 -->
-<div class="bug b1">
-  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
-  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
-</div>
+  <header>
+    <div class="logo">hellodot ♡</div>
 
-<!-- LADYBUG 2 -->
-<div class="bug b2">
-  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
-  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
-</div>
+    <nav>
+      <a href="#home">home</a>
+      <a href="#shop">shop</a>
+      <a href="#sizing">sizing</a>
+      <a href="#order">how to order</a>
+    </nav>
+  </header>
 
-<!-- LADYBUG 3 -->
-<div class="bug b3">
-  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
-  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
-</div>
 
-<!-- LADYBUG 4 -->
-<div class="bug b4">
-  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
-  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
-</div>
+  <main>
 
-<!-- LADYBUG 5 -->
-<div class="bug b5">
-  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
-  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
-</div>
+    <section id="home" class="hero">
 
+      <div class="hero-text">
+        <p class="little-text">♡ handmade with love ♡</p>
 
-<header>
+        <h1>
+          hello<br>
+          <span>dot!</span>
+        </h1>
 
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#core4">CORE 4</a>
-    <a href="#custom">CUSTOM</a>
-    <a href="#sizing">SIZING</a>
-    <a href="#order">ORDER</a>
-  </nav>
-
-  <div class="header-logo">
-    <div class="brand">HelloD<span style="color:#ef9fb5">o</span>t</div>
-    <div class="spark">✦</div>
-    <div class="mini">HANDMADE PRESS-ON NAILS</div>
-  </div>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-  <div>
-
-    <div class="sparkle">✦</div>
-
-    <h1>
-      HelloD<span>o</span>t
-    </h1>
-
-    <div class="hero-sub">
-      HANDMADE PRESS-ON NAILS
-    </div>
-
-    <div class="sparkle">✦</div>
-
-    <p>
-      Cute handmade press-on nails with
-      a little something special in every set.
-    </p>
-
-    <div class="buttons">
-      <a class="button" href="#core4">SHOP CORE 4 ♡</a>
-      <a class="button outline" href="#custom">CUSTOM SETS ♡</a>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CORE 4 -->
-
-<section id="core4">
-
-  <div class="core-inner">
-
-    <div class="heading">
-      <div class="eyebrow">✦ THE SIGNATURE COLLECTION ✦</div>
-      <h2>CORE 4 ♡</h2>
-    </div>
-
-    <div class="products">
-
-      <div class="product">
-
-        <div class="photo">
-          <img src="phonto%202.PNG" alt="Sugar Dots">
-        </div>
-
-        <h3>Sugar Dots</h3>
-        <div class="price">$15</div>
-        <div class="length">SHORT / MEDIUM</div>
-
-        <br>
-
-        <a class="button outline" href="#sugar">
-          VIEW SET ♡
-        </a>
-
-      </div>
-
-
-      <div class="product">
-
-        <div class="photo">
-          <img src="phonto%203.PNG" alt="Pink Haze">
-        </div>
-
-        <h3>Pink Haze</h3>
-        <div class="price">$22</div>
-        <div class="length">SHORT / MEDIUM</div>
-
-        <br>
-
-        <a class="button outline" href="#pink">
-          VIEW SET ♡
-        </a>
-
-      </div>
-
-
-      <div class="product">
-
-        <div class="photo">
-          <img src="phonto%204.PNG" alt="Sweetheart Charm">
-        </div>
-
-        <h3>Sweetheart Charm</h3>
-        <div class="price">$24</div>
-        <div class="length">SHORT / MEDIUM</div>
-
-        <br>
-
-        <a class="button outline" href="#sweetheart">
-          VIEW SET ♡
-        </a>
-
-      </div>
-
-
-      <div class="product">
-
-        <div class="photo">
-          <img src="phonto.PNG" alt="Scarlet Petals">
-        </div>
-
-        <h3>Scarlet Petals</h3>
-        <div class="price">$28</div>
-        <div class="length">SHORT / MEDIUM</div>
-
-        <br>
-
-        <a class="button outline" href="#scarlet">
-          VIEW SET ♡
-        </a>
-
-      </div>
-
-    </div>
-
-    <div style="text-align:center;margin-top:25px;color:#d45b7c">
-      ♡ handmade with love ♡
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- SET DETAILS -->
-
-<section style="padding-top:30px;padding-bottom:20px">
-
-  <div class="details" id="sugar">
-    <h3>Sugar Dots ♡</h3>
-    <p>$15 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-      DM TO ORDER ♡
-    </a>
-  </div>
-
-  <div class="details" id="pink">
-    <h3>Pink Haze ♡</h3>
-    <p>$22 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-      DM TO ORDER ♡
-    </a>
-  </div>
-
-  <div class="details" id="sweetheart">
-    <h3>Sweetheart Charm ♡</h3>
-    <p>$24 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-      DM TO ORDER ♡
-    </a>
-  </div>
-
-  <div class="details" id="scarlet">
-    <h3>Scarlet Petals ♡</h3>
-    <p>$28 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-      DM TO ORDER ♡
-    </a>
-  </div>
-
-</section>
-
-
-<!-- CUSTOM + SIZING -->
-
-<div class="two-columns">
-
-  <div class="box" id="custom">
-
-    <div class="eyebrow">✦ MAKE IT YOURS ✦</div>
-
-    <h2>Custom Sets ♡</h2>
-
-    <p>
-      Have your own idea? Send your inspiration,
-      colors, charms, or design through DM.
-    </p>
-
-    <div class="addons">
-
-      <div class="addon">
-        <span>French Tips</span>
-        <strong>+$2</strong>
-      </div>
-
-      <div class="addon">
-        <span>Simple Charms</span>
-        <strong>+$2</strong>
-      </div>
-
-      <div class="addon">
-        <span>Specialty / Multiple Charms</span>
-        <strong>+$3–$5</strong>
-      </div>
-
-      <div class="addon">
-        <span>3D Details</span>
-        <strong>+$3–$5</strong>
-      </div>
-
-      <div class="addon">
-        <span>Hand-Painted Details</span>
-        <strong>+$2–$5</strong>
-      </div>
-
-      <div class="addon">
-        <span>Complex Artwork</span>
-        <strong>+$5–$10</strong>
-      </div>
-
-    </div>
-
-    <p>
-      Add-on prices are for the <strong>entire set</strong>,
-      not per nail.
-    </p>
-
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-      DM TO ORDER ♡
-    </a>
-
-  </div>
-
-
-  <div class="box" id="sizing">
-
-    <div class="eyebrow">✦ FIND YOUR FIT ✦</div>
-
-    <h2>Sizing ♡</h2>
-
-    <p>
-      Use our simple quarter method to help us determine your sizing.
-    </p>
-
-    <div class="steps">
-
-      <div class="step">
-        <div class="number">01</div>
-        <h3>Place Your Hand</h3>
-        <p>
-          Place your hand flat with your nails showing.
+        <p class="description">
+          handmade press-on nails<br>
+          made just for you ♡
         </p>
+
+        <a href="#shop" class="button">
+          shop the sets ♡
+        </a>
       </div>
 
-      <div class="step">
-        <div class="number">02</div>
-        <h3>Add a Quarter</h3>
-        <p>
-          Put a U.S. quarter next to your nails.
-        </p>
+      <div class="hero-picture">
+        <img src="photo.png" alt="Hellodot handmade press-on nails">
       </div>
 
-      <div class="step">
-        <div class="number">03</div>
-        <h3>Take Your Photo</h3>
-        <p>
-          Take it straight from above and send it with your order DM.
-        </p>
+    </section>
+
+
+    <section class="welcome">
+
+      <p class="little-text">♡ welcome to hellodot ♡</p>
+
+      <h2>
+        cute nails,<br>
+        <span>made by hand.</span>
+      </h2>
+
+      <p>
+        Handmade press-on nails with cute little details
+        made to make you feel extra special. ♡
+      </p>
+
+    </section>
+
+
+    <section id="shop" class="shop">
+
+      <p class="little-text">♡ shop ♡</p>
+
+      <h2>pick your set!</h2>
+
+      <div class="products">
+
+        <div class="product">
+          <div class="product-photo">🎀</div>
+          <h3>Pink Bow</h3>
+          <p>$18</p>
+          <a href="#order">order ♡</a>
+        </div>
+
+        <div class="product">
+          <div class="product-photo">💗</div>
+          <h3>Baby Pink</h3>
+          <p>$16</p>
+          <a href="#order">order ♡</a>
+        </div>
+
+        <div class="product">
+          <div class="product-photo">🌸</div>
+          <h3>Sweet Flower</h3>
+          <p>$18</p>
+          <a href="#order">order ♡</a>
+        </div>
+
       </div>
 
-    </div>
-
-    <div style="
-      background:#fbdde6;
-      border-radius:18px;
-      padding:12px;
-      font-size:12px;
-      color:#634952;
-    ">
-      ♡ Please take a photo of <strong>both hands.</strong>
-    </div>
-
-  </div>
-
-</div>
+    </section>
 
 
-<!-- ORDER -->
+    <section id="sizing" class="sizing">
 
-<div class="order" id="order">
+      <p class="little-text">♡ sizing ♡</p>
 
-  <div class="eyebrow">✦ READY TO ORDER? ✦</div>
+      <h2>
+        not sure about<br>
+        your nail size?
+      </h2>
 
-  <h2>Let's Get Your Set ♡</h2>
+      <p>
+        No worries! Follow our sizing guide to find
+        the perfect fit before ordering.
+      </p>
 
-  <p>
-    Send us a DM with the set you'd like,
-    your preferred length, and your sizing photos.
-  </p>
+      <a href="#order" class="button">
+        sizing guide →
+      </a>
 
-  <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-    DM TO ORDER ♡
-  </a>
-
-</div>
-
-
-<!-- INFO -->
-
-<section>
-
-  <div class="info">
-
-    <div class="info-card">
-      <div class="info-icon">♡</div>
-      <h3>HANDMADE</h3>
-      <p>Every set is handmade with care.</p>
-    </div>
-
-    <div class="info-card">
-      <div class="info-icon">✦</div>
-      <h3>SHIPPING</h3>
-      <p>$5 U.S. shipping per order.</p>
-    </div>
-
-    <div class="info-card">
-      <div class="info-icon">♡</div>
-      <h3>PAYMENT</h3>
-      <p>Payment details are confirmed through DM.</p>
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- FOOTER -->
+    <section id="order" class="order">
 
-<footer>
+      <p class="little-text">♡ how to order ♡</p>
 
-  <div class="footer-logo">
-    HelloDot ♡
-  </div>
+      <h2>getting your nails is easy!</h2>
 
-  <p>
-    Handmade Press-On Nails
-  </p>
+      <div class="steps">
 
-  <div style="margin:20px">
-    <a href="https://instagram.com/shophellodot" target="_blank">
-      Instagram
-    </a>
+        <div>
+          <span>01</span>
+          <h3>choose your set</h3>
+          <p>Pick the set you love.</p>
+        </div>
 
-    <a href="mailto:shopathellodot@gmail.com">
-      Email
-    </a>
-  </div>
+        <div>
+          <span>02</span>
+          <h3>find your size</h3>
+          <p>Check our sizing guide.</p>
+        </div>
 
-  <p>made with love ♡</p>
+        <div>
+          <span>03</span>
+          <h3>DM to order</h3>
+          <p>Send us your set and size.</p>
+        </div>
 
-</footer>
+      </div>
+
+      <a href="https://instagram.com/" class="button">
+        DM to order ♡
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="logo">hellodot ♡</div>
+
+    <p>handmade press-on nails</p>
+
+    <p>made with ♡ by hellodot</p>
+
+  </footer>
 
 </body>
 </html>

@@ -7,683 +7,820 @@
 
 <style>
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
+
 body{
   margin:0;
-  background:#fffaf4;
-  color:#3b2930;
+  background:#fff8f5;
+  color:#171316;
   font-family:Arial,sans-serif;
   overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* ---------- COLORS ---------- */
+:root{
+  --pink:#ef7192;
+  --lightpink:#f8b8c8;
+  --pale:#fff3f5;
+  --cream:#fffaf7;
+  --line:#f3b8c8;
+}
+
+/* ---------- BACKGROUND DOTS ---------- */
 body:before{
   content:"";
   position:fixed;
   inset:0;
-  pointer-events:none;
-  z-index:-1;
-  opacity:.35;
-  background-image:radial-gradient(#efb8c8 2px,transparent 2.5px);
-  background-size:90px 90px;
+  z-index:-2;
+  opacity:.45;
+  background-image:radial-gradient(#f4aabd 2px,transparent 2px);
+  background-size:38px 38px;
 }
 
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(255,241,246,.96);
-  border-bottom:1px solid #edc9d3;
-  backdrop-filter:blur(10px);
-}
-.header{
-  max-width:1150px;
-  margin:auto;
-  padding:18px 25px;
-  text-align:center;
-}
-.logo{
-  font-family:Georgia,serif;
-  font-size:39px;
-  font-weight:bold;
-  color:#d45b7c;
-}
-nav{margin-top:10px}
-nav a{
-  text-decoration:none;
-  color:#594048;
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:1.5px;
-  margin:0 11px;
-}
-nav a:hover{color:#d45b7c}
-
-/* DRAWN LADYBUGS */
+/* ---------- LADYBUGS ---------- */
 .bug{
   position:fixed;
-  width:30px;
-  height:30px;
-  z-index:20;
+  width:38px;
+  height:38px;
+  z-index:50;
   pointer-events:none;
 }
-.bodybug{
+
+.bug-body{
   position:absolute;
-  width:22px;
-  height:25px;
-  left:4px;
-  top:5px;
-  background:#df5b6d;
-  border:2px solid #342329;
+  width:27px;
+  height:30px;
+  left:6px;
+  top:6px;
+  background:#e74f62;
+  border:2px solid #191316;
   border-radius:50%;
 }
-.headbug{
+
+.bug-head{
   position:absolute;
-  width:12px;
-  height:9px;
-  left:9px;
+  width:14px;
+  height:11px;
+  left:12px;
   top:1px;
-  background:#302228;
+  background:#171316;
   border-radius:50%;
 }
-.linebug{
+
+.bug-line{
   position:absolute;
   width:2px;
-  height:22px;
-  left:14px;
-  top:7px;
-  background:#342329;
-  z-index:2;
-}
-.spot{
-  position:absolute;
-  width:4px;
-  height:4px;
-  background:#342329;
-  border-radius:50%;
+  height:25px;
+  background:#171316;
+  left:19px;
+  top:8px;
   z-index:3;
 }
-.s1{left:8px;top:11px}
-.s2{left:17px;top:11px}
-.s3{left:8px;top:18px}
-.s4{left:17px;top:18px}
 
-.bug1{top:15%;left:3%;animation:a 18s infinite ease-in-out}
-.bug2{top:32%;right:4%;animation:b 21s infinite ease-in-out}
-.bug3{top:57%;left:5%;animation:c 19s infinite ease-in-out}
-.bug4{top:75%;right:6%;animation:d 22s infinite ease-in-out}
-.bug5{bottom:7%;left:48%;animation:e 20s infinite ease-in-out}
-
-@keyframes a{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(70px,80px) rotate(12deg)}
-}
-@keyframes b{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(-80px,90px) rotate(-12deg)}
-}
-@keyframes c{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(100px,-40px) rotate(10deg)}
-}
-@keyframes d{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(-80px,-90px) rotate(-10deg)}
-}
-@keyframes e{
-  0%,100%{transform:translate(0)}
-  50%{transform:translate(100px,-60px) rotate(10deg)}
+.dot{
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#171316;
+  z-index:4;
 }
 
-/* GENERAL */
-section{
-  max-width:1150px;
-  margin:auto;
-  padding:80px 25px;
+.d1{left:10px;top:13px}
+.d2{left:22px;top:13px}
+.d3{left:10px;top:22px}
+.d4{left:22px;top:22px}
+
+.b1{top:14%;left:4%;animation:fly1 18s infinite ease-in-out}
+.b2{top:19%;right:5%;animation:fly2 21s infinite ease-in-out}
+.b3{top:46%;left:6%;animation:fly3 19s infinite ease-in-out}
+.b4{top:70%;right:5%;animation:fly4 22s infinite ease-in-out}
+.b5{bottom:8%;left:47%;animation:fly5 20s infinite ease-in-out}
+
+@keyframes fly1{
+  0%,100%{transform:translate(0) rotate(-5deg)}
+  50%{transform:translate(100px,90px) rotate(12deg)}
 }
-.eyebrow{
-  color:#d45b7c;
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:3px;
+@keyframes fly2{
+  0%,100%{transform:translate(0)}
+  50%{transform:translate(-100px,100px) rotate(-12deg)}
 }
-h2{
-  font-family:Georgia,serif;
-  color:#d45b7c;
-  font-size:48px;
-  margin:8px 0;
+@keyframes fly3{
+  0%,100%{transform:translate(0)}
+  50%{transform:translate(90px,-50px) rotate(10deg)}
 }
-.decor{
-  color:#e3a0b3;
-  letter-spacing:8px;
-  margin:18px 0;
+@keyframes fly4{
+  0%,100%{transform:translate(0)}
+  50%{transform:translate(-90px,-90px) rotate(-10deg)}
+}
+@keyframes fly5{
+  0%,100%{transform:translate(0)}
+  50%{transform:translate(100px,-50px) rotate(10deg)}
 }
 
-/* BUTTONS */
-.button{
-  display:inline-block;
-  background:#d96082;
-  color:white !important;
-  text-decoration:none !important;
-  border-radius:999px;
-  padding:12px 22px;
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:1px;
-  border:2px solid #d96082;
-  transition:.2s;
-}
-.button:hover{
-  background:#c95274;
-  transform:translateY(-2px);
-}
-.outline{
-  background:#fffaf4;
-  color:#d45b7c !important;
-}
-
-/* HERO */
-.hero{
-  min-height:610px;
+/* ---------- HEADER ---------- */
+header{
+  height:115px;
+  background:#fffaf8;
+  border-bottom:1px solid #f2ccd5;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
+  position:relative;
+  z-index:20;
 }
-.hero-inner{max-width:750px}
+
+nav{
+  position:absolute;
+  left:6%;
+  display:flex;
+  gap:38px;
+}
+
+nav a{
+  color:#111;
+  text-decoration:none;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+}
+
+nav a:hover{color:var(--pink)}
+
+.header-logo{
+  position:absolute;
+  top:-58px;
+  width:195px;
+  height:195px;
+  border-radius:50%;
+  background:#fffaf8;
+  border:3px solid #f5c1ce;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 5px 20px rgba(230,100,130,.08);
+}
+
+.header-logo .brand{
+  font-family:Georgia,serif;
+  font-size:34px;
+}
+
+.header-logo .mini{
+  font-size:7px;
+  letter-spacing:3px;
+  margin-top:7px;
+}
+
+.header-logo .spark{
+  color:var(--pink);
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:520px;
+  padding:120px 20px 70px;
+  text-align:center;
+  position:relative;
+}
+
 .hero h1{
   font-family:Georgia,serif;
-  font-size:clamp(65px,10vw,105px);
-  margin:12px 0;
-  color:#38272d;
-  line-height:.9;
+  font-weight:400;
+  font-size:clamp(70px,10vw,120px);
+  margin:0;
+  letter-spacing:-5px;
 }
+
+.hero h1 span{color:#ef9fb5}
+
 .hero-sub{
-  color:#d45b7c;
-  font-family:Georgia,serif;
-  font-size:23px;
+  margin-top:12px;
+  font-size:11px;
+  letter-spacing:7px;
+  font-weight:bold;
 }
+
+.sparkle{
+  color:var(--pink);
+  font-size:28px;
+}
+
 .hero p{
-  max-width:500px;
-  margin:20px auto 28px;
-  color:#765761;
-  font-size:14px;
+  max-width:520px;
+  margin:30px auto;
+  font-size:16px;
+  line-height:1.6;
 }
+
 .buttons{
   display:flex;
   justify-content:center;
+  gap:15px;
   flex-wrap:wrap;
-  gap:8px;
 }
 
-/* CORE */
-.core{
-  background:#fff1f5;
-  max-width:none;
-  border-top:1px solid #efd1da;
-  border-bottom:1px solid #efd1da;
+.button{
+  display:inline-block;
+  padding:14px 31px;
+  border-radius:40px;
+  background:var(--pink);
+  color:white !important;
+  text-decoration:none !important;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1px;
+  border:2px solid var(--pink);
 }
-.core-inner{
-  max-width:1150px;
+
+.button.outline{
+  background:#fffaf8;
+  color:var(--pink) !important;
+}
+
+/* ---------- GENERAL ---------- */
+.section{
+  padding:65px 5%;
+  max-width:1200px;
   margin:auto;
 }
-.heading{text-align:center;margin-bottom:40px}
+
+.heading{text-align:center}
+
+.eyebrow{
+  color:var(--pink);
+  font-size:10px;
+  letter-spacing:4px;
+  font-weight:bold;
+}
+
+h2{
+  font-family:Georgia,serif;
+  font-weight:400;
+  color:var(--pink);
+  font-size:45px;
+  margin:8px 0 30px;
+}
+
+/* ---------- CORE 4 ---------- */
+#core4{
+  background:#fff1f4;
+  max-width:none;
+  border-top:1px solid #f4ccd7;
+  border-bottom:1px solid #f4ccd7;
+}
+
+.core-inner{
+  max-width:1200px;
+  margin:auto;
+}
 
 .products{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:16px;
+  gap:22px;
 }
 
 .product{
-  background:#fffdf9;
-  border:1px solid #eccbd5;
-  border-radius:28px;
-  padding:12px;
-  box-shadow:0 10px 25px rgba(190,90,120,.08);
-  transition:.25s;
+  background:#fffaf8;
+  border:2px solid #f3b3c4;
+  border-radius:18px;
+  padding:10px;
+  text-align:center;
 }
-.product:hover{transform:translateY(-5px)}
 
 .photo{
-  height:280px;
-  background:#f9e7eb;
-  border:7px solid #fff3f5;
-  border-radius:22px;
-  overflow:hidden;
+  width:100%;
+  height:275px;
+  background:#f8e6ea;
+  border-radius:13px;
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
 }
+
 .photo img{
   width:100%;
   height:100%;
   object-fit:contain;
 }
 
-.product-info{text-align:center;padding:12px 3px 6px}
 .product h3{
   font-family:Georgia,serif;
-  font-size:21px;
-  margin:0 0 3px;
+  font-size:20px;
+  margin:16px 0 5px;
 }
+
 .price{
-  color:#d45b7c;
-  font-size:19px;
+  color:var(--pink);
   font-weight:bold;
+  font-size:16px;
 }
+
 .length{
   display:inline-block;
-  margin:8px 0 13px;
-  padding:5px 11px;
+  background:#fbdce5;
+  color:#d95779;
   border-radius:20px;
-  background:#f8dce4;
-  color:#bd526f;
+  padding:6px 13px;
+  margin:10px 0 14px;
   font-size:9px;
   font-weight:bold;
-  letter-spacing:1px;
 }
-.product .button{padding:9px 16px}
 
-/* CUSTOM */
-.custom-box{
-  background:#f8dce5;
-  border:1px solid #edc0ce;
-  border-radius:40px;
-  padding:55px 30px;
+.product .button{
+  padding:10px 20px;
+  font-size:9px;
+}
+
+/* ---------- CUSTOM + SIZING ---------- */
+.two-columns{
+  max-width:1200px;
+  margin:auto;
+  padding:65px 5%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.box{
+  background:#fffaf8;
+  border:2px solid #f4bdca;
+  border-radius:22px;
+  padding:35px 30px;
   text-align:center;
-  position:relative;
 }
-.custom-box:before{
-  content:"♡  ✦  ♡";
-  position:absolute;
-  top:20px;
-  left:25px;
-  color:#dfa0b3;
+
+.box h2{
+  margin-bottom:10px;
 }
-.custom-box:after{
-  content:"✦  ♡  ✦";
-  position:absolute;
-  bottom:20px;
-  right:25px;
-  color:#dfa0b3;
+
+.box p{
+  font-size:13px;
+  line-height:1.6;
 }
-.custom-box p{
-  max-width:600px;
-  margin:12px auto;
-  color:#684c55;
-  font-size:14px;
-}
+
 .addons{
-  max-width:650px;
   margin:25px auto;
-  background:rgba(255,255,255,.65);
-  border-radius:23px;
-  padding:22px;
+  max-width:450px;
 }
-.addons h3{
-  font-family:Georgia,serif;
-  color:#d45b7c;
-  font-size:25px;
-  margin:0 0 10px;
-}
+
 .addon{
   display:flex;
   justify-content:space-between;
-  border-bottom:1px solid #e8c9d2;
+  border-bottom:1px dotted #dfa2b2;
   padding:8px 0;
-  font-size:13px;
+  font-size:12px;
 }
-.addon:last-child{border:0}
-.addon strong{color:#d45b7c}
 
-/* SIZING */
-.sizing{
-  background:#fff1f5;
-  max-width:none;
-  border-top:1px solid #efd1da;
-  border-bottom:1px solid #efd1da;
-}
-.sizing-inner{
-  max-width:950px;
-  margin:auto;
-  background:#fffdf9;
-  border:1px solid #eccbd5;
-  border-radius:35px;
-  padding:50px 25px;
-  text-align:center;
-}
+.addon strong{color:var(--pink)}
+
+/* ---------- SIZING ---------- */
 .steps{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-top:30px;
+  gap:15px;
+  margin:25px 0;
 }
+
 .step{
-  background:#fff0f4;
-  border:1px solid #efced8;
-  border-radius:23px;
-  padding:25px 15px;
+  background:#fff1f4;
+  border-radius:18px;
+  padding:20px 10px;
 }
+
 .number{
-  width:40px;
-  height:40px;
+  margin:auto;
+  width:35px;
+  height:35px;
   border-radius:50%;
-  background:#dc6688;
+  background:var(--pink);
   color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin:auto;
-  font-size:10px;
   font-weight:bold;
+  font-size:11px;
 }
+
 .step h3{
   font-family:Georgia,serif;
-  color:#d45b7c;
-  font-size:20px;
-}
-.step p{
-  color:#765761;
-  font-size:13px;
-}
-.important{
-  margin:25px auto 0;
-  max-width:650px;
-  background:#f8dce4;
-  padding:14px;
-  border-radius:17px;
-  color:#634952;
-  font-size:13px;
+  color:#222;
+  font-size:17px;
 }
 
-/* SET DETAILS */
+.step p{
+  font-size:12px;
+}
+
+/* ---------- DETAILS ---------- */
 .details{
   display:none;
-  margin-top:30px;
-  background:#fff1f5;
-  border:1px solid #edc7d2;
+  text-align:center;
+  background:#fff1f4;
+  border:2px solid #f3bdcb;
   border-radius:25px;
   padding:30px;
+  margin:0 auto 25px;
+  max-width:700px;
 }
+
 .details:target{display:block}
+
 .details h3{
   font-family:Georgia,serif;
-  color:#d45b7c;
-  font-size:28px;
+  color:var(--pink);
+  font-size:30px;
 }
 
-/* ORDER */
+/* ---------- ORDER ---------- */
 .order{
-  max-width:800px;
-  margin:auto;
-  background:#fffdf9;
-  border:1px solid #eccbd5;
-  border-radius:35px;
-  padding:45px 25px;
+  background:#fff1f4;
+  border-top:1px solid #f2ccd5;
+  border-bottom:1px solid #f2ccd5;
   text-align:center;
-}
-.order p{
-  color:#765761;
-  max-width:560px;
-  margin:15px auto 25px;
+  padding:40px 20px;
 }
 
-/* INFO */
+.order h2{margin-bottom:10px}
+
+/* ---------- INFO ---------- */
 .info{
+  max-width:1100px;
+  margin:auto;
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-.info-card{
-  background:#fffdf9;
-  border:1px solid #eccbd5;
-  border-radius:24px;
-  padding:25px 15px;
   text-align:center;
-}
-.info-card .icon{
-  color:#d45b7c;
-  font-size:23px;
-}
-.info-card h3{
-  font-family:Georgia,serif;
-  color:#d45b7c;
-}
-.info-card p{
-  color:#765761;
-  font-size:13px;
 }
 
-/* FOOTER */
+.info-card{
+  padding:20px;
+  border-right:1px solid #efc6d1;
+}
+
+.info-card:last-child{border:0}
+
+.info-icon{
+  width:55px;
+  height:55px;
+  background:#f7b7c8;
+  color:white;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+}
+
+.info-card h3{
+  letter-spacing:2px;
+  font-size:12px;
+}
+
+.info-card p{
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* ---------- FOOTER ---------- */
 footer{
-  background:#f9e7ec;
-  border-top:1px solid #edcbd5;
-  padding:50px 20px;
+  background:#f6b4c5;
+  padding:45px 20px;
   text-align:center;
 }
+
 .footer-logo{
   font-family:Georgia,serif;
-  color:#d45b7c;
-  font-size:36px;
-}
-footer p{color:#765761;font-size:13px}
-footer a{
-  color:#d45b7c;
-  text-decoration:none;
-  margin:0 8px;
-  font-size:12px;
-  font-weight:bold;
+  font-size:35px;
 }
 
-/* MOBILE */
-@media(max-width:950px){
-  .products{grid-template-columns:repeat(2,1fr);max-width:650px;margin:auto}
+footer a{
+  color:#222;
+  text-decoration:none;
+  margin:0 10px;
+  font-size:12px;
 }
-@media(max-width:600px){
-  nav a{margin:0 5px;font-size:8px}
-  .hero h1{font-size:62px}
-  section{padding:65px 18px}
-  .products{grid-template-columns:1fr;max-width:370px}
-  .photo{height:320px}
-  .steps,.info{grid-template-columns:1fr}
-  h2{font-size:40px}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:950px){
+  .products{grid-template-columns:repeat(2,1fr)}
+  nav{gap:15px;left:3%}
+}
+
+@media(max-width:650px){
+  header{height:90px}
+  .header-logo{width:125px;height:125px;top:-35px}
+  .header-logo .brand{font-size:23px}
+  .header-logo .mini{font-size:5px}
+  nav{display:none}
+  .hero{padding-top:90px}
+  .hero h1{font-size:65px}
+  .hero-sub{font-size:8px;letter-spacing:4px}
+  .products{grid-template-columns:1fr}
+  .photo{height:310px}
+  .two-columns{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .info{grid-template-columns:1fr}
+  .info-card{border-right:0;border-bottom:1px solid #efc6d1}
 }
 </style>
 </head>
 
 <body>
 
-<!-- 5 DRAWN LADYBUGS -->
-<div class="bug bug1">
-  <div class="bodybug"></div><div class="headbug"></div><div class="linebug"></div>
-  <div class="spot s1"></div><div class="spot s2"></div><div class="spot s3"></div><div class="spot s4"></div>
+<!-- LADYBUG 1 -->
+<div class="bug b1">
+  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
+  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
 </div>
-<div class="bug bug2">
-  <div class="bodybug"></div><div class="headbug"></div><div class="linebug"></div>
-  <div class="spot s1"></div><div class="spot s2"></div><div class="spot s3"></div><div class="spot s4"></div>
+
+<!-- LADYBUG 2 -->
+<div class="bug b2">
+  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
+  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
 </div>
-<div class="bug bug3">
-  <div class="bodybug"></div><div class="headbug"></div><div class="linebug"></div>
-  <div class="spot s1"></div><div class="spot s2"></div><div class="spot s3"></div><div class="spot s4"></div>
+
+<!-- LADYBUG 3 -->
+<div class="bug b3">
+  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
+  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
 </div>
-<div class="bug bug4">
-  <div class="bodybug"></div><div class="headbug"></div><div class="linebug"></div>
-  <div class="spot s1"></div><div class="spot s2"></div><div class="spot s3"></div><div class="spot s4"></div>
+
+<!-- LADYBUG 4 -->
+<div class="bug b4">
+  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
+  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
 </div>
-<div class="bug bug5">
-  <div class="bodybug"></div><div class="headbug"></div><div class="linebug"></div>
-  <div class="spot s1"></div><div class="spot s2"></div><div class="spot s3"></div><div class="spot s4"></div>
+
+<!-- LADYBUG 5 -->
+<div class="bug b5">
+  <div class="bug-body"></div><div class="bug-head"></div><div class="bug-line"></div>
+  <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div><div class="dot d4"></div>
 </div>
+
 
 <header>
-  <div class="header">
-    <div class="logo">HelloDot ♡</div>
-    <nav>
-      <a href="#home">HOME</a>
-      <a href="#core4">CORE 4</a>
-      <a href="#custom">CUSTOM</a>
-      <a href="#sizing">SIZING</a>
-      <a href="#order">ORDER</a>
-    </nav>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#core4">CORE 4</a>
+    <a href="#custom">CUSTOM</a>
+    <a href="#sizing">SIZING</a>
+    <a href="#order">ORDER</a>
+  </nav>
+
+  <div class="header-logo">
+    <div class="brand">HelloD<span style="color:#ef9fb5">o</span>t</div>
+    <div class="spark">✦</div>
+    <div class="mini">HANDMADE PRESS-ON NAILS</div>
   </div>
+
 </header>
 
-<!-- HOME -->
+
+<!-- HERO -->
+
 <section class="hero" id="home">
-  <div class="hero-inner">
-    <div class="eyebrow">HANDMADE PRESS-ON NAILS</div>
-    <h1>HelloDot</h1>
-    <div class="hero-sub">Handmade Press-On Nails</div>
-    <div class="decor">♡ · ✦ · ♡</div>
-    <p>
-      Cute handmade press-on nails with a little
-      something special in every set.
-    </p>
-    <div class="buttons">
-      <a class="button" href="#core4">SHOP CORE 4</a>
-      <a class="button outline" href="#custom">CUSTOM SETS</a>
+
+  <div>
+
+    <div class="sparkle">✦</div>
+
+    <h1>
+      HelloD<span>o</span>t
+    </h1>
+
+    <div class="hero-sub">
+      HANDMADE PRESS-ON NAILS
     </div>
+
+    <div class="sparkle">✦</div>
+
+    <p>
+      Cute handmade press-on nails with
+      a little something special in every set.
+    </p>
+
+    <div class="buttons">
+      <a class="button" href="#core4">SHOP CORE 4 ♡</a>
+      <a class="button outline" href="#custom">CUSTOM SETS ♡</a>
+    </div>
+
   </div>
+
 </section>
+
 
 <!-- CORE 4 -->
-<div class="core" id="core4">
-<section>
-  <div class="heading">
-    <div class="eyebrow">THE SIGNATURE COLLECTION</div>
-    <h2>CORE 4</h2>
-    <div class="decor">♡ ✦ ♡</div>
-  </div>
 
-  <div class="products">
+<section id="core4">
 
-    <div class="product">
-      <div class="photo">
-        <img src="phonto%202.PNG" alt="Sugar Dots">
-      </div>
-      <div class="product-info">
+  <div class="core-inner">
+
+    <div class="heading">
+      <div class="eyebrow">✦ THE SIGNATURE COLLECTION ✦</div>
+      <h2>CORE 4 ♡</h2>
+    </div>
+
+    <div class="products">
+
+      <div class="product">
+
+        <div class="photo">
+          <img src="phonto%202.PNG" alt="Sugar Dots">
+        </div>
+
         <h3>Sugar Dots</h3>
         <div class="price">$15</div>
-        <div class="length">SHORT / MEDIUM</div><br>
-        <a class="button outline" href="#sugar-dots">VIEW SET ♡</a>
-      </div>
-    </div>
+        <div class="length">SHORT / MEDIUM</div>
 
-    <div class="product">
-      <div class="photo">
-        <img src="phonto%203.PNG" alt="Pink Haze">
+        <br>
+
+        <a class="button outline" href="#sugar">
+          VIEW SET ♡
+        </a>
+
       </div>
-      <div class="product-info">
+
+
+      <div class="product">
+
+        <div class="photo">
+          <img src="phonto%203.PNG" alt="Pink Haze">
+        </div>
+
         <h3>Pink Haze</h3>
         <div class="price">$22</div>
-        <div class="length">SHORT / MEDIUM</div><br>
-        <a class="button outline" href="#pink-haze">VIEW SET ♡</a>
-      </div>
-    </div>
+        <div class="length">SHORT / MEDIUM</div>
 
-    <div class="product">
-      <div class="photo">
-        <img src="phonto%204.PNG" alt="Sweetheart Charm">
+        <br>
+
+        <a class="button outline" href="#pink">
+          VIEW SET ♡
+        </a>
+
       </div>
-      <div class="product-info">
+
+
+      <div class="product">
+
+        <div class="photo">
+          <img src="phonto%204.PNG" alt="Sweetheart Charm">
+        </div>
+
         <h3>Sweetheart Charm</h3>
         <div class="price">$24</div>
-        <div class="length">SHORT / MEDIUM</div><br>
-        <a class="button outline" href="#sweetheart">VIEW SET ♡</a>
-      </div>
-    </div>
+        <div class="length">SHORT / MEDIUM</div>
 
-    <div class="product">
-      <div class="photo">
-        <img src="phonto.PNG" alt="Scarlet Petals">
+        <br>
+
+        <a class="button outline" href="#sweetheart">
+          VIEW SET ♡
+        </a>
+
       </div>
-      <div class="product-info">
+
+
+      <div class="product">
+
+        <div class="photo">
+          <img src="phonto.PNG" alt="Scarlet Petals">
+        </div>
+
         <h3>Scarlet Petals</h3>
         <div class="price">$28</div>
-        <div class="length">SHORT / MEDIUM</div><br>
-        <a class="button outline" href="#scarlet">VIEW SET ♡</a>
+        <div class="length">SHORT / MEDIUM</div>
+
+        <br>
+
+        <a class="button outline" href="#scarlet">
+          VIEW SET ♡
+        </a>
+
       </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:25px;color:#d45b7c">
+      ♡ handmade with love ♡
     </div>
 
   </div>
 
-  <div class="decor" style="text-align:center;margin-top:30px">
-    ♡ handmade with love ♡
-  </div>
 </section>
-</div>
+
 
 <!-- SET DETAILS -->
-<section style="padding-top:30px;padding-bottom:30px">
 
-  <div class="details" id="sugar-dots">
+<section style="padding-top:30px;padding-bottom:20px">
+
+  <div class="details" id="sugar">
     <h3>Sugar Dots ♡</h3>
     <p>$15 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">DM TO ORDER ♡</a>
+    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
+      DM TO ORDER ♡
+    </a>
   </div>
 
-  <div class="details" id="pink-haze">
+  <div class="details" id="pink">
     <h3>Pink Haze ♡</h3>
     <p>$22 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">DM TO ORDER ♡</a>
+    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
+      DM TO ORDER ♡
+    </a>
   </div>
 
   <div class="details" id="sweetheart">
     <h3>Sweetheart Charm ♡</h3>
     <p>$24 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">DM TO ORDER ♡</a>
+    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
+      DM TO ORDER ♡
+    </a>
   </div>
 
   <div class="details" id="scarlet">
     <h3>Scarlet Petals ♡</h3>
     <p>$28 · Short / Medium</p>
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">DM TO ORDER ♡</a>
+    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
+      DM TO ORDER ♡
+    </a>
   </div>
 
 </section>
 
-<!-- CUSTOM -->
-<section id="custom">
-  <div class="custom-box">
-    <div class="eyebrow">A LITTLE SOMETHING EXTRA</div>
+
+<!-- CUSTOM + SIZING -->
+
+<div class="two-columns">
+
+  <div class="box" id="custom">
+
+    <div class="eyebrow">✦ MAKE IT YOURS ✦</div>
+
     <h2>Custom Sets ♡</h2>
+
     <p>
       Have your own idea? Send your inspiration,
       colors, charms, or design through DM.
     </p>
 
     <div class="addons">
-      <h3>Add-Ons</h3>
 
-      <div class="addon"><span>French Tips</span><strong>+$2</strong></div>
-      <div class="addon"><span>Simple Charms</span><strong>+$2</strong></div>
-      <div class="addon"><span>Specialty / Multiple Charms</span><strong>+$3–$5</strong></div>
-      <div class="addon"><span>3D Details</span><strong>+$3–$5</strong></div>
-      <div class="addon"><span>Hand-Painted Details</span><strong>+$2–$5</strong></div>
-      <div class="addon"><span>Complex Artwork</span><strong>+$5–$10</strong></div>
+      <div class="addon">
+        <span>French Tips</span>
+        <strong>+$2</strong>
+      </div>
+
+      <div class="addon">
+        <span>Simple Charms</span>
+        <strong>+$2</strong>
+      </div>
+
+      <div class="addon">
+        <span>Specialty / Multiple Charms</span>
+        <strong>+$3–$5</strong>
+      </div>
+
+      <div class="addon">
+        <span>3D Details</span>
+        <strong>+$3–$5</strong>
+      </div>
+
+      <div class="addon">
+        <span>Hand-Painted Details</span>
+        <strong>+$2–$5</strong>
+      </div>
+
+      <div class="addon">
+        <span>Complex Artwork</span>
+        <strong>+$5–$10</strong>
+      </div>
+
     </div>
 
     <p>
-      Add-on prices are for the <strong>entire set</strong>, not per nail.
+      Add-on prices are for the <strong>entire set</strong>,
+      not per nail.
     </p>
 
     <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
       DM TO ORDER ♡
     </a>
+
   </div>
-</section>
 
-<!-- SIZING -->
-<div class="sizing" id="sizing">
-<section>
-  <div class="sizing-inner">
 
-    <div class="eyebrow">FIND YOUR FIT</div>
+  <div class="box" id="sizing">
+
+    <div class="eyebrow">✦ FIND YOUR FIT ✦</div>
+
     <h2>Sizing ♡</h2>
 
-    <p style="color:#765761;font-size:14px">
+    <p>
       Use our simple quarter method to help us determine your sizing.
     </p>
 
@@ -692,82 +829,117 @@ footer a{
       <div class="step">
         <div class="number">01</div>
         <h3>Place Your Hand</h3>
-        <p>Place your hand flat with your nails showing.</p>
+        <p>
+          Place your hand flat with your nails showing.
+        </p>
       </div>
 
       <div class="step">
         <div class="number">02</div>
         <h3>Add a Quarter</h3>
-        <p>Put a U.S. quarter next to your nails.</p>
+        <p>
+          Put a U.S. quarter next to your nails.
+        </p>
       </div>
 
       <div class="step">
         <div class="number">03</div>
         <h3>Take Your Photo</h3>
-        <p>Take it straight from above and send it with your order DM.</p>
+        <p>
+          Take it straight from above and send it with your order DM.
+        </p>
       </div>
 
     </div>
 
-    <div class="important">
+    <div style="
+      background:#fbdde6;
+      border-radius:18px;
+      padding:12px;
+      font-size:12px;
+      color:#634952;
+    ">
       ♡ Please take a photo of <strong>both hands.</strong>
     </div>
 
   </div>
-</section>
+
 </div>
 
+
 <!-- ORDER -->
-<section id="order">
-  <div class="order">
-    <div class="eyebrow">READY TO ORDER?</div>
-    <h2>Let's Get Your Set ♡</h2>
 
-    <p>
-      Send us a DM with the set you'd like,
-      your preferred length, and your sizing photos.
-    </p>
+<div class="order" id="order">
 
-    <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
-      DM TO ORDER ♡
-    </a>
-  </div>
-</section>
+  <div class="eyebrow">✦ READY TO ORDER? ✦</div>
+
+  <h2>Let's Get Your Set ♡</h2>
+
+  <p>
+    Send us a DM with the set you'd like,
+    your preferred length, and your sizing photos.
+  </p>
+
+  <a class="button" href="https://ig.me/m/shophellodot" target="_blank">
+    DM TO ORDER ♡
+  </a>
+
+</div>
+
 
 <!-- INFO -->
+
 <section>
+
   <div class="info">
 
     <div class="info-card">
-      <div class="icon">♡</div>
-      <h3>Handmade</h3>
+      <div class="info-icon">♡</div>
+      <h3>HANDMADE</h3>
       <p>Every set is handmade with care.</p>
     </div>
 
     <div class="info-card">
-      <div class="icon">✦</div>
-      <h3>Shipping</h3>
+      <div class="info-icon">✦</div>
+      <h3>SHIPPING</h3>
       <p>$5 U.S. shipping per order.</p>
     </div>
 
     <div class="info-card">
-      <div class="icon">♡</div>
-      <h3>Payment</h3>
+      <div class="info-icon">♡</div>
+      <h3>PAYMENT</h3>
       <p>Payment details are confirmed through DM.</p>
     </div>
 
   </div>
+
 </section>
 
+
+<!-- FOOTER -->
+
 <footer>
-  <div class="footer-logo">HelloDot ♡</div>
-  <p>Handmade Press-On Nails</p>
-  <div class="decor">♡ · ✦ · ♡</div>
 
-  <a href="https://instagram.com/shophellodot" target="_blank">Instagram</a>
-  <a href="mailto:shopathellodot@gmail.com">Email</a>
+  <div class="footer-logo">
+    HelloDot ♡
+  </div>
 
-  <p style="margin-top:20px">made with love ♡</p>
+  <p>
+    Handmade Press-On Nails
+  </p>
+
+  <div style="margin:20px">
+    <a href="https://instagram.com/shophellodot" target="_blank">
+      Instagram
+    </a>
+
+    <a href="mailto:shopathellodot@gmail.com">
+      Email
+    </a>
+  </div>
+
+  <p>made with love ♡</p>
+
 </footer>
 
 </body>

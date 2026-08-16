@@ -3,321 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>HelloDot ♡</title>
-
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #fffaf3;
-  color: #3d2930;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-header {
-  padding: 25px 20px;
-  background: #fff0f4;
-  border-bottom: 2px solid #f2ccd6;
-}
-
-.logo {
-  font-family: Georgia, serif;
-  font-size: 42px;
-  color: #d85f82;
-  font-weight: bold;
-}
-
-nav {
-  margin-top: 15px;
-}
-
-nav a {
-  color: #563d45;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-.hero {
-  padding: 100px 20px;
-}
-
-.hero h1 {
-  font-family: Georgia, serif;
-  font-size: 75px;
-  margin: 0;
-}
-
-.hero p {
-  color: #d85f82;
-  font-family: Georgia, serif;
-  font-size: 24px;
-}
-
-.button {
-  display: inline-block;
-  background: #df7091;
-  color: white;
-  padding: 13px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 8px;
-}
-
-section {
-  padding: 70px 6%;
-}
-
-h2 {
-  font-family: Georgia, serif;
-  color: #d85f82;
-  font-size: 45px;
-}
-
-.products {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.product {
-  background: white;
-  border: 2px solid #f1d1da;
-  border-radius: 25px;
-  padding: 15px;
-}
-
-.product img {
-  width: 100%;
-  height: 240px;
-  object-fit: contain;
-  background: #fdecef;
-  border-radius: 18px;
-}
-
-.product h3 {
-  font-family: Georgia, serif;
-  font-size: 22px;
-}
-
-.price {
-  color: #d85f82;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.custom {
-  max-width: 900px;
-  margin: auto;
-  padding: 50px 25px;
-  background: #f9dce5;
-  border-radius: 35px;
-}
-
-.custom p {
-  max-width: 600px;
-  margin: 15px auto 25px;
-}
-
-.sizing {
-  max-width: 900px;
-  margin: auto;
-  background: #fff0f4;
-  border-radius: 35px;
-  padding: 45px 25px;
-}
-
-.steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.step {
-  background: white;
-  padding: 25px;
-  border-radius: 22px;
-  border: 1px solid #f0d0d9;
-}
-
-.step strong {
-  display: block;
-  color: #d85f82;
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.info {
-  max-width: 900px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.info div {
-  background: white;
-  border: 1px solid #f0d0d9;
-  border-radius: 22px;
-  padding: 25px;
-}
-
-footer {
-  margin-top: 50px;
-  padding: 50px 20px;
-  background: #fff0f4;
-  color: #765963;
-}
-
-/* FIVE MOVING LADYBUGS */
-
-.bug {
-  position: fixed;
-  font-size: 25px;
-  z-index: 10;
-  animation: move 15s infinite alternate ease-in-out;
-}
-
-.b1 { top: 15%; left: 5%; }
-.b2 { top: 30%; right: 5%; animation-delay: 2s; }
-.b3 { top: 55%; left: 8%; animation-delay: 4s; }
-.b4 { top: 75%; right: 8%; animation-delay: 6s; }
-.b5 { bottom: 5%; left: 45%; animation-delay: 8s; }
-
-@keyframes move {
-  0% {
-    transform: translate(0,0) rotate(0deg);
-  }
-  50% {
-    transform: translate(70px,50px) rotate(15deg);
-  }
-  100% {
-    transform: translate(-30px,100px) rotate(-10deg);
-  }
-}
-
-@media(max-width:800px) {
-  .products {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .steps,
-  .info {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media(max-width:500px) {
-  .products {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 55px;
-  }
-}
-</style>
 </head>
 
-<body>
+<body style="margin:0;background:#fff8f2;color:#3b2930;font-family:Arial,sans-serif;text-align:center;">
 
-<div class="bug b1">🐞</div>
-<div class="bug b2">🐞</div>
-<div class="bug b3">🐞</div>
-<div class="bug b4">🐞</div>
-<div class="bug b5">🐞</div>
+<div style="background:#fff0f4;padding:25px;border-bottom:2px solid #f3cbd6;">
+  <div style="font-family:Georgia,serif;font-size:38px;color:#d85f82;font-weight:bold;">
+    HelloDot ♡
+  </div>
 
-<header>
-  <div class="logo">HelloDot ♡</div>
+  <div style="margin-top:15px;">
+    <a href="#home" style="color:#513840;margin:10px;text-decoration:none;">HOME</a>
+    <a href="#core4" style="color:#513840;margin:10px;text-decoration:none;">CORE 4</a>
+    <a href="#custom" style="color:#513840;margin:10px;text-decoration:none;">CUSTOM</a>
+    <a href="#sizing" style="color:#513840;margin:10px;text-decoration:none;">SIZING</a>
+  </div>
+</div>
 
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#core4">CORE 4</a>
-    <a href="#custom">CUSTOM</a>
-    <a href="#sizing">SIZING</a>
-  </nav>
-</header>
+<div id="home" style="padding:100px 20px;background:#fffaf5;">
 
-<section class="hero" id="home">
+  <div style="color:#d85f82;font-size:12px;font-weight:bold;letter-spacing:3px;">
+    HANDMADE PRESS-ON NAILS
+  </div>
 
-  <h1>HelloDot</h1>
+  <h1 style="font-family:Georgia,serif;font-size:70px;margin:15px 0;color:#3b2930;">
+    HelloDot
+  </h1>
 
-  <p>Handmade Press-On Nails</p>
+  <div style="color:#d85f82;font-family:Georgia,serif;font-size:23px;">
+    Handmade Press-On Nails
+  </div>
 
-  <a class="button" href="#core4">
-    SHOP CORE 4
-  </a>
+  <div style="margin-top:30px;">
+    <a href="#core4" style="display:inline-block;background:#d85f82;color:white;padding:13px 25px;border-radius:30px;text-decoration:none;margin:5px;font-weight:bold;">
+      SHOP CORE 4
+    </a>
 
-  <a class="button" href="#custom">
-    CUSTOM SETS
-  </a>
+    <a href="#custom" style="display:inline-block;background:white;color:#d85f82;border:2px solid #d85f82;padding:11px 25px;border-radius:30px;text-decoration:none;margin:5px;font-weight:bold;">
+      CUSTOM SETS
+    </a>
+  </div>
 
-</section>
+</div>
 
-<section id="core4">
+<div id="core4" style="padding:70px 20px;">
 
-  <h2>CORE 4 ♡</h2>
+  <div style="color:#d85f82;font-size:11px;letter-spacing:3px;font-weight:bold;">
+    THE SIGNATURE COLLECTION
+  </div>
 
-  <div class="products">
+  <h2 style="font-family:Georgia,serif;font-size:45px;color:#d85f82;">
+    CORE 4 ♡
+  </h2>
 
-    <div class="product">
-      <img src="phonto%202.PNG" alt="Sugar Dots">
-      <h3>Sugar Dots</h3>
-      <div class="price">$15</div>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:25px;max-width:1100px;margin:auto;">
+
+
+    <div style="width:220px;background:white;border:2px solid #f1d1da;border-radius:25px;padding:15px;">
+
+      <img src="phonto%202.PNG" alt="Sugar Dots" style="width:100%;height:220px;object-fit:contain;background:#fdecef;border-radius:18px;">
+
+      <h3 style="font-family:Georgia,serif;font-size:22px;">Sugar Dots</h3>
+
+      <div style="color:#d85f82;font-size:20px;font-weight:bold;">$15</div>
+
       <p>Short / Medium</p>
-      <a class="button" href="#sizing">VIEW SET ♡</a>
+
+      <a href="#sizing" style="display:inline-block;background:#f9dce5;color:#d85f82;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;">
+        VIEW SET ♡
+      </a>
+
     </div>
 
-    <div class="product">
-      <img src="phonto%203.PNG" alt="Pink Haze">
-      <h3>Pink Haze</h3>
-      <div class="price">$22</div>
+
+    <div style="width:220px;background:white;border:2px solid #f1d1da;border-radius:25px;padding:15px;">
+
+      <img src="phonto%203.PNG" alt="Pink Haze" style="width:100%;height:220px;object-fit:contain;background:#fdecef;border-radius:18px;">
+
+      <h3 style="font-family:Georgia,serif;font-size:22px;">Pink Haze</h3>
+
+      <div style="color:#d85f82;font-size:20px;font-weight:bold;">$22</div>
+
       <p>Short / Medium</p>
-      <a class="button" href="#sizing">VIEW SET ♡</a>
+
+      <a href="#sizing" style="display:inline-block;background:#f9dce5;color:#d85f82;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;">
+        VIEW SET ♡
+      </a>
+
     </div>
 
-    <div class="product">
-      <img src="phonto%204.PNG" alt="Sweetheart Charm">
-      <h3>Sweetheart Charm</h3>
-      <div class="price">$24</div>
+
+    <div style="width:220px;background:white;border:2px solid #f1d1da;border-radius:25px;padding:15px;">
+
+      <img src="phonto%204.PNG" alt="Sweetheart Charm" style="width:100%;height:220px;object-fit:contain;background:#fdecef;border-radius:18px;">
+
+      <h3 style="font-family:Georgia,serif;font-size:22px;">Sweetheart Charm</h3>
+
+      <div style="color:#d85f82;font-size:20px;font-weight:bold;">$24</div>
+
       <p>Short / Medium</p>
-      <a class="button" href="#sizing">VIEW SET ♡</a>
+
+      <a href="#sizing" style="display:inline-block;background:#f9dce5;color:#d85f82;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;">
+        VIEW SET ♡
+      </a>
+
     </div>
 
-    <div class="product">
-      <img src="phonto.PNG" alt="Scarlet Petals">
-      <h3>Scarlet Petals</h3>
-      <div class="price">$28</div>
+
+    <div style="width:220px;background:white;border:2px solid #f1d1da;border-radius:25px;padding:15px;">
+
+      <img src="phonto.PNG" alt="Scarlet Petals" style="width:100%;height:220px;object-fit:contain;background:#fdecef;border-radius:18px;">
+
+      <h3 style="font-family:Georgia,serif;font-size:22px;">Scarlet Petals</h3>
+
+      <div style="color:#d85f82;font-size:20px;font-weight:bold;">$28</div>
+
       <p>Short / Medium</p>
-      <a class="button" href="#sizing">VIEW SET ♡</a>
+
+      <a href="#sizing" style="display:inline-block;background:#f9dce5;color:#d85f82;padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;">
+        VIEW SET ♡
+      </a>
+
     </div>
 
   </div>
+</div>
 
-</section>
 
-<section id="custom">
+<div id="custom" style="padding:70px 20px;">
 
-  <div class="custom">
+  <div style="max-width:850px;margin:auto;background:#f9dce5;border-radius:35px;padding:50px 25px;">
 
-    <h2>Custom Sets ♡</h2>
+    <div style="color:#d85f82;font-size:11px;letter-spacing:3px;font-weight:bold;">
+      CUSTOM
+    </div>
+
+    <h2 style="font-family:Georgia,serif;font-size:45px;color:#d85f82;">
+      Custom Sets ♡
+    </h2>
+
+    <p>Starting at <strong>$20</strong></p>
 
     <p>
-      Want something made just for you?
-      Send your inspiration through Instagram DM.
-    </p>
-
-    <p>
-      <strong>Starting at $20</strong>
+      Create your own HelloDot set with your favorite colors,
+      charms, artwork, and details.
     </p>
 
     <p>
@@ -325,101 +155,69 @@ footer {
       3D Details +$3–$5 · Hand-Painted Details +$2–$5
     </p>
 
-    <p>
-      Add-on prices are for the entire set,
-      not per nail.
-    </p>
+    <p><strong>Add-on prices are for the entire set, not per nail.</strong></p>
 
-    <a
-      class="button"
-      href="https://ig.me/m/shophellodot"
-      target="_blank"
-    >
+    <a href="https://ig.me/m/shophellodot" target="_blank"
+       style="display:inline-block;background:#d85f82;color:white;padding:14px 25px;border-radius:30px;text-decoration:none;font-weight:bold;">
       DM TO ORDER ♡
     </a>
 
   </div>
+</div>
 
-</section>
 
-<section id="sizing">
+<div id="sizing" style="padding:70px 20px;">
 
-  <div class="sizing">
+  <div style="max-width:850px;margin:auto;background:#fff0f4;border-radius:35px;padding:50px 25px;">
 
-    <h2>Sizing ♡</h2>
+    <div style="color:#d85f82;font-size:11px;letter-spacing:3px;font-weight:bold;">
+      FIND YOUR FIT
+    </div>
 
-    <p>
-      Send your sizing photo with your order.
-    </p>
+    <h2 style="font-family:Georgia,serif;font-size:45px;color:#d85f82;">
+      Sizing ♡
+    </h2>
 
-    <div class="steps">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;">
 
-      <div class="step">
-        <strong>01</strong>
-        Place a U.S. quarter next to your nails.
+      <div style="background:white;border-radius:22px;padding:25px;width:200px;">
+        <strong style="color:#d85f82;font-size:25px;">01</strong>
+        <p>Place a U.S. quarter next to your nails.</p>
       </div>
 
-      <div class="step">
-        <strong>02</strong>
-        Take a clear photo from above.
+      <div style="background:white;border-radius:22px;padding:25px;width:200px;">
+        <strong style="color:#d85f82;font-size:25px;">02</strong>
+        <p>Take a clear photo from above.</p>
       </div>
 
-      <div class="step">
-        <strong>03</strong>
-        Send the photo through Instagram DM.
+      <div style="background:white;border-radius:22px;padding:25px;width:200px;">
+        <strong style="color:#d85f82;font-size:25px;">03</strong>
+        <p>Send the photo with your order DM.</p>
       </div>
 
     </div>
 
-    <p>
-      ♡ Your sizing applies to the <strong>entire set</strong>,
-      not per nail.
+    <p style="margin-top:25px;">
+      ♡ Sizing applies to the <strong>entire set</strong>, not per nail.
     </p>
 
   </div>
+</div>
 
-</section>
 
-<section>
+<footer style="background:#fff0f4;padding:50px 20px;">
 
-  <div class="info">
-
-    <div>
-      <h3>♡ Handmade</h3>
-      <p>Every set is handmade with care.</p>
-    </div>
-
-    <div>
-      <h3>✦ Shipping</h3>
-      <p>$5 U.S. shipping per order.</p>
-    </div>
-
-    <div>
-      <h3>♡ Payment</h3>
-      <p>Payment details are confirmed through DM.</p>
-    </div>
-
+  <div style="font-family:Georgia,serif;font-size:35px;color:#d85f82;">
+    HelloDot ♡
   </div>
-
-</section>
-
-<footer>
-
-  <h2>HelloDot ♡</h2>
 
   <p>Handmade Press-On Nails</p>
 
-  <br>
-
-  <a href="https://instagram.com/shophellodot" target="_blank">
+  <a href="https://instagram.com/shophellodot" target="_blank" style="color:#d85f82;margin:10px;">
     Instagram
   </a>
 
-  <a href="https://tiktok.com/@shop.hellodot" target="_blank">
-    TikTok
-  </a>
-
-  <a href="mailto:shopathellodot@gmail.com">
+  <a href="mailto:shopathellodot@gmail.com" style="color:#d85f82;margin:10px;">
     Email
   </a>
 

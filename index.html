@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HelloDot | Handmade Press-On Nails</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf4;
+      color: #33262a;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.55;
+      background-image:
+        radial-gradient(circle, #f7cdd7 5px, transparent 6px);
+      background-size: 90px 90px;
+      z-index: -1;
+    }
+
+    header {
+      background: rgba(255, 239, 243, 0.9);
+      border-bottom: 1px solid #f5d5dc;
+      padding: 14px 6%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      color: #e96f91;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #33262a;
+      text-decoration: none;
+      font-size: 14px;
+      margin-left: 18px;
+    }
+
+    nav a:hover {
+      color: #e96f91;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      min-height: 650px;
+      padding: 100px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 70px;
+    }
+
+    .hero-text {
+      max-width: 560px;
+    }
+
+    .small-title {
+      color: #e96f91;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.02;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #e96f91;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 480px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 30px;
+      background: #ee7898;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #ee7898;
+    }
+
+    .button.outline {
+      background: transparent;
+      color: #e96f91;
+    }
+
+    .hero-card {
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: #fde9ee;
+      border: 2px solid #f3a9bb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 45px;
+      color: #e96f91;
+      font-family: Georgia, serif;
+      font-size: 28px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 6%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      color: #e96f91;
+    }
+
+    .section-title p {
+      margin-top: 8px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid #f3d5dc;
+      border-radius: 22px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .product-photo {
+      height: 210px;
+      border-radius: 17px;
+      background: #fde9ee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #d98aa0;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .product h3 {
+      font-family: Georgia, serif;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .price {
+      color: #e96f91;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .product p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .product .button {
+      font-size: 13px;
+      padding: 10px 18px;
+    }
+
+    .custom-box {
+      background: #fdebef;
+      border: 1px solid #f4c5d1;
+      border-radius: 28px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .custom-box h3 {
+      font-family: Georgia, serif;
+      font-size: 35px;
+      color: #e96f91;
+      margin-bottom: 8px;
+    }
+
+    .addons {
+      margin: 25px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .addons li {
+      margin: 8px 0;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid #f3d5dc;
+      border-radius: 22px;
+      padding: 28px;
+      text-align: center;
+    }
+
+    .info-card h3 {
+      color: #e96f91;
+      margin-bottom: 10px;
+    }
+
+    .payment {
+      background: #fce2e9;
+      border-radius: 25px;
+      padding: 30px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .payment h3 {
+      color: #e96f91;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 1px solid #f4d4dc;
+    }
+
+    footer h2 {
+      font-family: Georgia, serif;
+      color: #e96f91;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #e96f91;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    .ladybug {
+      position: fixed;
+      font-size: 22px;
+      z-index: -1;
+    }
+
+    .bug1 { top: 18%; left: 5%; }
+    .bug2 { top: 55%; right: 5%; }
+    .bug3 { bottom: 10%; left: 8%; }
+
+    @media (max-width: 900px) {
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 70px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        width: 280px;
+        height: 280px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ladybug bug1">🐞</div>
+  <div class="ladybug bug2">🐞</div>
+  <div class="ladybug bug3">🐞</div>
+
+  <header>
+    <nav>
+      <div class="logo">HelloDot ♡</div>
+
+      <div>
+        <a href="#home">HOME</a>
+        <a href="#core4">CORE 4</a>
+        <a href="#custom">CUSTOM SETS</a>
+        <a href="#sizing">SIZING</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <div class="small-title">HANDMADE PRESS-ON NAILS</div>
+
+        <h1>
+          Handmade<br>
+          <span>press-on nails</span><br>
+          made for you ♡
+        </h1>
+
+        <p>
+          Cute, handmade press-on nails created with love,
+          quality, and attention to detail.
+        </p>
+
+        <div class="buttons">
+          <a class="button" href="#core4">SHOP CORE 4</a>
+          <a class="button outline" href="#custom">CUSTOM SETS</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        Your HelloDot<br>
+        nail moment ♡
+      </div>
+    </section>
+
+    <section id="core4">
+      <div class="section-title">
+        <h2>CORE 4</h2>
+        <p>Our signature HelloDot sets ♡</p>
+      </div>
+
+      <div class="products">
+
+        <div class="product">
+          <div class="product-photo">Your Sugar Dots photo</div>
+          <h3>Sugar Dots</h3>
+          <div class="price">$15</div>
+          <p>Light milky base with delicate polka dots.</p>
+          <p><strong>Short / Medium</strong></p>
+          <a class="button" href="#payment">BUY NOW</a>
+        </div>
+
+        <div class="product">
+          <div class="product-photo">Your Pink Haze photo</div>
+          <h3>Pink Haze</h3>
+          <div class="price">$22</div>
+          <p>A dreamy pink set with a sweet star detail.</p>
+          <p><strong>Short / Medium</strong></p>
+          <a class="button" href="#payment">BUY NOW</a>
+        </div>
+
+        <div class="product">
+          <div class="product-photo">Your Sweetheart Charm photo</div>
+          <h3>Sweetheart Charm</h3>
+          <div class="price">$24</div>
+          <p>Soft pink finished with a delicate gold cross.</p>
+          <p><strong>Short / Medium</strong></p>
+          <a class="button" href="#payment">BUY NOW</a>
+        </div>
+
+        <div class="product">
+          <div class="product-photo">Your Scarlet Petals photo</div>
+          <h3>Scarlet Petals</h3>
+          <div class="price">$28</div>
+          <p>Cherry-red flowers with delicate gold accents.</p>
+          <p><strong>Short / Medium</strong></p>
+          <a class="button" href="#payment">BUY NOW</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="custom">
+      <div class="section-title">
+        <h2>Custom Sets ♡</h2>
+        <p>Made especially for you.</p>
+      </div>
+
+      <div class="custom-box">
+        <h3>Starting at $20</h3>
+
+        <p>
+          Have an idea in mind? Send us your inspiration
+          through Instagram DM and we'll create a custom set
+          made just for you.
+        </p>
+
+        <ul class="addons">
+          <li>French Tips — <strong>+$2 per set</strong></li>
+          <li>Simple Charms — <strong>+$2</strong></li>
+          <li>Specialty / Multiple Charms — <strong>+$3–$5</strong></li>
+          <li>3D Details — <strong>+$3–$5</strong></li>
+          <li>Hand-Painted Details — <strong>+$2–$5</strong></li>
+          <li>Complex Artwork — <strong>+$5–$10</strong></li>
+        </ul>
+
+        <p><strong>Final pricing varies depending on design complexity.</strong></p>
+
+        <br>
+
+        <a class="button" href="https://instagram.com/shophellodot">
+          DM US ON INSTAGRAM
+        </a>
+      </div>
+    </section>
+
+    <section id="sizing">
+      <div class="section-title">
+        <h2>Quarter Sizing ♡</h2>
+        <p>Find your perfect fit.</p>
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>01 — Grab a Quarter</h3>
+          <p>
+            Use a U.S. quarter as your size reference.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>02 — Take Your Photo</h3>
+          <p>
+            Take a clear photo of your nails next to the quarter
+            from directly above.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>03 — Send It</h3>
+          <p>
+            Send your sizing photo through Instagram DM.
+            Sizing photos are required for orders.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="payment">
+      <div class="payment">
+        <h3>💳 Payment</h3>
+        <p>
+          <strong>Cash App — Available Now</strong>
+        </p>
+        <p>
+          Place your order first, then we'll send you the
+          payment instructions.
+        </p>
+        <p>
+          More payment options coming soon! ♡
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>📦 Shipping</h3>
+          <p>
+            U.S. shipping is a flat <strong>$5</strong>
+            per order.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>♡ Handmade</h3>
+          <p>
+            Every set is handmade with love and care.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>✨ Made For You</h3>
+          <p>
+            Custom sets start at just <strong>$20</strong>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <h2>HelloDot ♡</h2>
+
+    <p>Have a question or want a custom set?</p>
+
+    <br>
+
+    <p>
+      <a href="https://instagram.com/shophellodot">Instagram</a>
+      <a href="https://tiktok.com/@shop.hellodot">TikTok</a>
+      <a href="mailto:shopathellodot@gmail.com">Email</a>
+    </p>
+
+    <br>
+
+    <p>Thank you for supporting my small business! ♡</p>
+  </footer>
+
+</body>
+</html>

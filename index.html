@@ -1,1 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>HelloDot ♡ Handmade Press-On Nails</title>
+
+  <style>
+
+    /* =====================================================
+       HELLODOT
+       COMPLETE ONE-FILE WEBSITE
+    ===================================================== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fffaf4;
+      color: #3b292e;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* =====================================================
+       SOFT POLKA DOT BACKGROUND
+    ===================================================== */
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -5;
+
+      background-image:
+        radial-gradient(circle, #f3cbd5 3px, transparent 3.5px),
+        radial-gradient(circle, #f8e0e5 2px, transparent 2.5px);
+
+      background-size: 115px 115px, 175px 175px;
+      background-position: 20px 20px, 70px 90px;
+
+      opacity: 0.42;
+    }
+
+    /* =====================================================
+       FIVE REAL DRAWN LADYBUGS
+       NO EMOJIS
+    ===================================================== */
+
+    .bug {
+      position: fixed;
+      width: 27px;
+      height: 27px;
+      z-index: 30;
+      pointer-events: none;
+    }
+
+    .bug-body {
+      position: absolute;
+      width: 20px;
+      height: 22px;
+      left: 3px;
+      top: 4px;
+      background: #d94d61;
+      border: 2px solid #321f24;
+      border-radius: 50% 50% 45% 45%;
+    }
+
+    .bug-head {
+      position: absolute;
+      width: 11px;
+      height: 8px;
+      left: 8px;
+      top: 0;
+      background: #2e2023;
+      border-radius: 50%;
+    }
+
+    .bug-line {
+      position: absolute;
+      width: 2px;
+      height: 19px;
+      background: #321f24;
+      left: 12px;
+      top: 5px;
+      z-index: 2;
+    }
+
+    .bug-dot {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #321f24;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    .dot-a {
+      left: 7px;
+      top: 9px;
+    }
+
+    .dot-b {
+      left: 15px;
+      top: 9px;
+    }
+
+    .dot-c {
+      left: 7px;
+      top: 16px;
+    }
+
+    .dot-d {
+      left: 15px;
+      top: 16px;
+    }
+
+    .antenna {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-top: 1.5px solid #321f24;
+      border-radius: 50%;
+      top: -2px;
+    }
+
+    .antenna.left {
+      left: 5px;
+      transform: rotate(-35deg);
+    }
+
+    .antenna.right {
+      right: 5px;
+      transform: rotate(35deg);
+    }
+
+    .bug1 {
+      top: 14%;
+      left: 4%;
+      animation: floatOne 17s ease-in-out infinite;
+    }
+
+    .bug2 {
+      top: 30%;
+      right: 5%;
+      animation: floatTwo 21s ease-in-out infinite;
+    }
+
+    .bug3 {
+      top: 55%;
+      left: 6%;
+      animation: floatThree 19s ease-in-out infinite;
+    }
+
+    .bug4 {
+      top: 73%;
+      right: 7%;
+      animation: floatFour 23s ease-in-out infinite;
+    }
+
+    .bug5 {
+      bottom: 8%;
+      left: 48%;
+      animation: floatFive 18s ease-in-out infinite;
+    }
+
+    @keyframes floatOne {
+      0%, 100% {
+        transform: translate(0, 0) rotate(-8deg);
+      }
+
+      35% {
+        transform: translate(80px, 50px) rotate(9deg);
+      }
+
+      70% {
+        transform: translate(25px, 120px) rotate(-5deg);
+      }
+    }
+
+    @keyframes floatTwo {
+      0%, 100% {
+        transform: translate(0, 0) rotate(8deg);
+      }
+
+      35% {
+        transform: translate(-90px, 60px) rotate(-7deg);
+      }
+
+      70% {
+        transform: translate(-30px, 130px) rotate(6deg);
+      }
+    }
+
+    @keyframes floatThree {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      35% {
+        transform: translate(75px, -40px) rotate(10deg);
+      }
+
+      70% {
+        transform: translate(125px, 45px) rotate(-7deg);
+      }
+    }
+
+    @keyframes floatFour {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      40% {
+        transform: translate(-85px, -60px) rotate(-9deg);
+      }
+
+      75% {
+        transform: translate(-35px, -125px) rotate(7deg);
+      }
+    }
+
+    @keyframes floatFive {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      35% {
+        transform: translate(-85px, -35px) rotate(-8deg);
+      }
+
+      70% {
+        transform: translate(90px, -70px) rotate(8deg);
+      }
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(255, 247, 240, 0.94);
+      border-bottom: 1px solid #efd0d9;
+
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+
+      padding: 18px 6%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      color: #d65c7d;
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      color: #4c363d;
+      text-decoration: none;
+
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1.3px;
+
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #d65c7d;
+    }
+
+    /* =====================================================
+       GENERAL
+    ===================================================== */
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 95px 6%;
+    }
+
+    .eyebrow {
+      color: #d65c7d;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      color: #d65c7d;
+      font-family: Georgia, serif;
+      font-size: 50px;
+      line-height: 1.05;
+    }
+
+    .section-title p {
+      margin-top: 10px;
+      color: #74565f;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      min-height: 650px;
+      max-width: 1150px;
+      margin: auto;
+
+      padding: 120px 6% 90px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 800px;
+    }
+
+    .hero-small {
+      color: #d65c7d;
+
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+
+      font-size: clamp(58px, 9vw, 96px);
+
+      color: #38272d;
+
+      line-height: 0.95;
+
+      margin-bottom: 18px;
+    }
+
+    .hero-subtitle {
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 25px;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-decoration {
+      color: #e6a2b4;
+      font-size: 20px;
+      letter-spacing: 8px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .button {
+      display: inline-block;
+
+      padding: 13px 25px;
+
+      border-radius: 999px;
+
+      background: #df6f91;
+      border: 2px solid #df6f91;
+
+      color: white;
+      text-decoration: none;
+
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #cc5b7d;
+      border-color: #cc5b7d;
+      transform: translateY(-2px);
+    }
+
+    .button.light {
+      background: #fffaf4;
+      color: #d65c7d;
+    }
+
+    .button.light:hover {
+      background: #f9dce4;
+      color: #d65c7d;
+    }
+
+    /* =====================================================
+       CORE 4
+    ===================================================== */
+
+    .collection-intro {
+      text-align: center;
+      max-width: 600px;
+      margin: -25px auto 40px;
+      color: #74565f;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      background: #fffdf9;
+
+      border: 1px solid #efd2db;
+
+      border-radius: 30px;
+
+      padding: 14px;
+
+      text-align: center;
+
+      box-shadow: 0 12px 30px rgba(177, 92, 118, 0.07);
+
+      transition: 0.25s;
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(177, 92, 118, 0.13);
+    }
+
+    .product-photo {
+      width: 100%;
+      height: 245px;
+
+      border-radius: 23px;
+
+      background: #fbe8ed;
+
+      overflow: hidden;
+
+      margin-bottom: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-photo img {
+      width: 100%;
+      height: 245px;
+
+      object-fit: contain;
+
+      display: block;
+    }
+
+    .product h3 {
+      font-family: Georgia, serif;
+      color: #3b292f;
+
+      font-size: 23px;
+
+      margin-bottom: 2px;
+    }
+
+    .price {
+      color: #d65c7d;
+
+      font-size: 20px;
+      font-weight: bold;
+
+      margin-bottom: 6px;
+    }
+
+    .product-description {
+      color: #765962;
+
+      font-size: 13px;
+
+      min-height: 44px;
+
+      margin-bottom: 8px;
+    }
+
+    .product-size {
+      display: inline-block;
+
+      background: #f9dce4;
+      color: #c95275;
+
+      border-radius: 999px;
+
+      padding: 5px 12px;
+
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 1px;
+
+      margin-bottom: 15px;
+    }
+
+    /* =====================================================
+       CUSTOM SETS
+    ===================================================== */
+
+    .custom-section {
+      padding-top: 60px;
+    }
+
+    .custom-card {
+      position: relative;
+
+      background: #f9dfe7;
+
+      border: 1px solid #edbdcb;
+
+      border-radius: 40px;
+
+      padding: 65px 35px;
+
+      text-align: center;
+
+      overflow: hidden;
+
+      box-shadow: 0 15px 35px rgba(205, 103, 134, 0.08);
+    }
+
+    .custom-card::before {
+      content: "♡  ✦  ♡";
+
+      position: absolute;
+
+      top: 20px;
+      left: 28px;
+
+      color: #e8a9ba;
+
+      font-size: 19px;
+    }
+
+    .custom-card::after {
+      content: "✦  ♡  ✦";
+
+      position: absolute;
+
+      bottom: 20px;
+      right: 28px;
+
+      color: #e8a9ba;
+
+      font-size: 19px;
+    }
+
+    .custom-card h2 {
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 52px;
+
+      margin-bottom: 3px;
+    }
+
+    .custom-start {
+      font-family: Georgia, serif;
+
+      font-size: 25px;
+
+      margin-bottom: 15px;
+    }
+
+    .custom-description {
+      max-width: 650px;
+
+      margin: auto;
+
+      color: #694e57;
+    }
+
+    .addons {
+      max-width: 680px;
+
+      margin: 30px auto 22px;
+
+      padding: 28px;
+
+      background: rgba(255, 250, 244, 0.78);
+
+      border-radius: 26px;
+
+      text-align: left;
+    }
+
+    .addons h3 {
+      text-align: center;
+
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 27px;
+
+      margin-bottom: 12px;
+    }
+
+    .addon {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 15px;
+
+      padding: 10px 0;
+
+      border-bottom: 1px solid #eed2da;
+
+      font-size: 14px;
+    }
+
+    .addon:last-child {
+      border-bottom: none;
+    }
+
+    .addon strong {
+      color: #d65c7d;
+      white-space: nowrap;
+    }
+
+    .addon-warning {
+      max-width: 680px;
+
+      margin: 20px auto;
+
+      padding: 14px;
+
+      background: #fffaf4;
+
+      border-radius: 18px;
+
+      color: #60464f;
+
+      font-size: 13px;
+    }
+
+    .custom-note {
+      color: #755761;
+
+      font-size: 12px;
+      font-style: italic;
+
+      margin-bottom: 25px;
+    }
+
+    /* =====================================================
+       SIZING
+    ===================================================== */
+
+    .sizing-card {
+      background: #fff0f4;
+
+      border: 1px solid #efc6d2;
+
+      border-radius: 40px;
+
+      padding: 60px 35px;
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .sizing-card::before {
+      content: "SIZING GUIDE ♡";
+
+      position: absolute;
+
+      top: 24px;
+      right: 28px;
+
+      color: #e3a0b2;
+
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .sizing-note-main {
+      text-align: center;
+
+      max-width: 650px;
+
+      margin: -20px auto 35px;
+
+      color: #60464f;
+    }
+
+    .size-steps {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .size-step {
+      background: #fffaf5;
+
+      border: 1px solid #efd4dc;
+
+      border-radius: 28px;
+
+      padding: 30px 22px;
+
+      text-align: center;
+    }
+
+    .step-number {
+      width: 46px;
+      height: 46px;
+
+      margin: 0 auto 14px;
+
+      border-radius: 50%;
+
+      background: #df6f91;
+
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .size-step h3 {
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 22px;
+
+      margin-bottom: 8px;
+    }
+
+    .size-step p {
+      color: #74565f;
+
+      font-size: 14px;
+    }
+
+    .sizing-bottom {
+      margin-top: 28px;
+
+      padding: 18px;
+
+      background: #f9dce4;
+
+      border-radius: 20px;
+
+      text-align: center;
+
+      color: #674b54;
+
+      font-size: 13px;
+    }
+
+    .sizing-bottom strong {
+      color: #c95275;
+    }
+
+    /* =====================================================
+       ORDER
+    ===================================================== */
+
+    .order-card {
+      max-width: 800px;
+
+      margin: auto;
+
+      background: #fffdf9;
+
+      border: 1px solid #efd2db;
+
+      border-radius: 35px;
+
+      padding: 45px 30px;
+
+      text-align: center;
+
+      box-shadow: 0 12px 30px rgba(177, 92, 118, 0.06);
+    }
+
+    .order-card h2 {
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 43px;
+
+      margin-bottom: 10px;
+    }
+
+    .order-card p {
+      color: #74565f;
+
+      max-width: 580px;
+
+      margin: 0 auto 25px;
+    }
+
+    .order-list {
+      max-width: 500px;
+
+      margin: 0 auto 25px;
+
+      text-align: left;
+    }
+
+    .order-list div {
+      padding: 9px 0;
+
+      border-bottom: 1px solid #efd7de;
+
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       INFO
+    ===================================================== */
+
+    .info-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .info-card {
+      background: #fffdf9;
+
+      border: 1px solid #efd2db;
+
+      border-radius: 28px;
+
+      padding: 30px 20px;
+
+      text-align: center;
+    }
+
+    .info-card .symbol {
+      color: #d65c7d;
+
+      font-size: 25px;
+
+      margin-bottom: 7px;
+    }
+
+    .info-card h3 {
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 23px;
+
+      margin-bottom: 7px;
+    }
+
+    .info-card p {
+      color: #74565f;
+
+      font-size: 14px;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      margin-top: 30px;
+
+      padding: 70px 20px;
+
+      text-align: center;
+
+      background: #fff0f4;
+
+      border-top: 1px solid #efd2db;
+    }
+
+    footer h2 {
+      color: #d65c7d;
+
+      font-family: Georgia, serif;
+
+      font-size: 39px;
+
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #74565f;
+
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #d65c7d;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      margin: 0 8px;
+    }
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 950px) {
+
+      nav {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .size-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =====================================================
+       PHONE
+    ===================================================== */
+
+    @media (max-width: 550px) {
+
+      section {
+        padding: 75px 5%;
+      }
+
+      .hero {
+        min-height: 570px;
+
+        padding-top: 80px;
+      }
+
+      .hero h1 {
+        font-size: 57px;
+      }
+
+      .hero-subtitle {
+        font-size: 21px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-photo {
+        height: 280px;
+      }
+
+      .product-photo img {
+        height: 280px;
+      }
+
+      .section-title h2 {
+        font-size: 41px;
+      }
+
+      .custom-card,
+      .sizing-card {
+        padding: 50px 18px;
+      }
+
+      .custom-card h2 {
+        font-size: 43px;
+      }
+
+      .addon {
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .logo {
+        font-size: 31px;
+      }
+
+      .nav-links {
+        gap: 13px;
+      }
+
+      .nav-links a {
+        font-size: 9px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- =====================================================
+       FIVE DRAWN LADYBUGS
+  ====================================================== -->
+
+  <div class="bug bug1">
+    <div class="bug-body"></div>
+    <div class="bug-head"></div>
+    <div class="bug-line"></div>
+    <div class="bug-dot dot-a"></div>
+    <div class="bug-dot dot-b"></div>
+    <div class="bug-dot dot-c"></div>
+    <div class="bug-dot dot-d"></div>
+    <div class="antenna left"></div>
+    <div class="antenna right"></div>
+  </div>
+
+  <div class="bug bug2">
+    <div class="bug-body"></div>
+    <div class="bug-head"></div>
+    <div class="bug-line"></div>
+    <div class="bug-dot dot-a"></div>
+    <div class="bug-dot dot-b"></div>
+    <div class="bug-dot dot-c"></div>
+    <div class="bug-dot dot-d"></div>
+    <div class="antenna left"></div>
+    <div class="antenna right"></div>
+  </div>
+
+  <div class="bug bug3">
+    <div class="bug-body"></div>
+    <div class="bug-head"></div>
+    <div class="bug-line"></div>
+    <div class="bug-dot dot-a"></div>
+    <div class="bug-dot dot-b"></div>
+    <div class="bug-dot dot-c"></div>
+    <div class="bug-dot dot-d"></div>
+    <div class="antenna left"></div>
+    <div class="antenna right"></div>
+  </div>
+
+  <div class="bug bug4">
+    <div class="bug-body"></div>
+    <div class="bug-head"></div>
+    <div class="bug-line"></div>
+    <div class="bug-dot dot-a"></div>
+    <div class="bug-dot dot-b"></div>
+    <div class="bug-dot dot-c"></div>
+    <div class="bug-dot dot-d"></div>
+    <div class="antenna left"></div>
+    <div class="antenna right"></div>
+  </div>
+
+  <div class="bug bug5">
+    <div class="bug-body"></div>
+    <div class="bug-head"></div>
+    <div class="bug-line"></div>
+    <div class="bug-dot dot-a"></div>
+    <div class="bug-dot dot-b"></div>
+    <div class="bug-dot dot-c"></div>
+    <div class="bug-dot dot-d"></div>
+    <div class="antenna left"></div>
+    <div class="antenna right"></div>
+  </div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header>
+
+    <nav>
+
+      <div class="logo">
+        HelloDot ♡
+      </div>
+
+      <div class="nav-links">
+
+        <a href="#home">HOME</a>
+
+        <a href="#core4">CORE 4</a>
+
+        <a href="#custom">CUSTOM</a>
+
+        <a href="#sizing">SIZING</a>
+
+        <a href="#order">ORDER</a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =====================================================
+       HOME
+  ====================================================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+
+      <div class="hero-inner">
+
+        <div class="hero-small">
+          HANDMADE PRESS-ON NAILS
+        </div>
+
+        <h1>
+          HelloDot
+        </h1>
+
+        <div class="hero-subtitle">
+          Handmade Press-On Nails
+        </div>
+
+        <div class="hero-decoration">
+          ♡ ✦ ♡
+        </div>
+
+        <div class="hero-buttons">
+
+          <a class="button" href="#core4">
+            SHOP CORE 4
+          </a>
+
+          <a class="button light" href="#custom">
+            CUSTOM SETS
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CORE 4
+    ==================================================== -->
+
+    <section id="core4">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          THE SIGNATURE COLLECTION
+        </div>
+
+        <h2>
+          CORE 4
+        </h2>
+
+      </div>
+
+      <p class="collection-intro">
+        Four signature HelloDot sets, handmade with love.
+      </p>
+
+
+      <div class="products">
+
+
+        <!-- SUGAR DOTS -->
+
+        <article class="product">
+
+          <div class="product-photo">
+
+            <img
+              src="./phonto%202.PNG"
+              alt="Sugar Dots handmade press-on nails"
+            >
+
+          </div>
+
+          <h3>
+            Sugar Dots
+          </h3>
+
+          <div class="price">
+            $15
+          </div>
+
+          <p class="product-description">
+            A soft milky base with delicate polka dots.
+          </p>
+
+          <div class="product-size">
+            SHORT / MEDIUM
+          </div>
+
+          <br>
+
+          <a class="button light" href="#order">
+            VIEW SET ♡
+          </a>
+
+        </article>
+
+
+        <!-- PINK HAZE -->
+
+        <article class="product">
+
+          <div class="product-photo">
+
+            <img
+              src="./phonto%203.PNG"
+              alt="Pink Haze handmade press-on nails"
+            >
+
+          </div>
+
+          <h3>
+            Pink Haze
+          </h3>
+
+          <div class="price">
+            $22
+          </div>
+
+          <p class="product-description">
+            A dreamy pink set with a sweet delicate detail.
+          </p>
+
+          <div class="product-size">
+            SHORT / MEDIUM
+          </div>
+
+          <br>
+
+          <a class="button light" href="#order">
+            VIEW SET ♡
+          </a>
+
+        </article>
+
+
+        <!-- SWEETHEART CHARM -->
+
+        <article class="product">
+
+          <div class="product-photo">
+
+            <img
+              src="./phonto%204.PNG"
+              alt="Sweetheart Charm handmade press-on nails"
+            >
+
+          </div>
+
+          <h3>
+            Sweetheart Charm
+          </h3>
+
+          <div class="price">
+            $24
+          </div>
+
+          <p class="product-description">
+            Soft pink with a delicate gold charm.
+          </p>
+
+          <div class="product-size">
+            SHORT / MEDIUM
+          </div>
+
+          <br>
+
+          <a class="button light" href="#order">
+            VIEW SET ♡
+          </a>
+
+        </article>
+
+
+        <!-- SCARLET PETALS -->
+
+        <article class="product">
+
+          <div class="product-photo">
+
+            <img
+              src="./phonto.PNG"
+              alt="Scarlet Petals handmade press-on nails"
+            >
+
+          </div>
+
+          <h3>
+            Scarlet Petals
+          </h3>
+
+          <div class="price">
+            $28
+          </div>
+
+          <p class="product-description">
+            Cherry-red petals with delicate hand-painted details.
+          </p>
+
+          <div class="product-size">
+            SHORT / MEDIUM
+          </div>
+
+          <br>
+
+          <a class="button light" href="#order">
+            VIEW SET ♡
+          </a>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CUSTOM SETS
+    ==================================================== -->
+
+    <section id="custom" class="custom-section">
+
+      <div class="custom-card">
+
+        <div class="eyebrow">
+          MADE ESPECIALLY FOR YOU
+        </div>
+
+        <h2>
+          Custom Sets
+        </h2>
+
+        <div class="custom-start">
+          Starting at $20
+        </div>
+
+        <p class="custom-description">
+          Have your own idea? Send us your inspiration
+          and we'll create a custom HelloDot set.
+        </p>
+
+
+        <div class="addons">
+
+          <h3>
+            Add-Ons ♡
+          </h3>
+
+          <div class="addon">
+            <span>French Tips</span>
+            <strong>+$2</strong>
+          </div>
+
+          <div class="addon">
+            <span>Simple Charms</span>
+            <strong>+$2</strong>
+          </div>
+
+          <div class="addon">
+            <span>Specialty / Multiple Charms</span>
+            <strong>+$3–$5</strong>
+          </div>
+
+          <div class="addon">
+            <span>3D Details</span>
+            <strong>+$3–$5</strong>
+          </div>
+
+          <div class="addon">
+            <span>Hand-Painted Details</span>
+            <strong>+$2–$5</strong>
+          </div>
+
+          <div class="addon">
+            <span>Complex Artwork</span>
+            <strong>+$5–$10</strong>
+          </div>
+
+        </div>
+
+
+        <div class="addon-warning">
+          ♡ <strong>
+            Add-on prices are for the entire set,
+            not per nail.
+          </strong>
+        </div>
+
+
+        <div class="custom-note">
+          Final pricing may vary depending on design complexity.
+        </div>
+
+
+        <a
+          class="button"
+          href="https://ig.me/m/shophellodot"
+          target="_blank"
+        >
+          DM TO ORDER ♡
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         SIZING
+    ==================================================== -->
+
+    <section id="sizing">
+
+      <div class="sizing-card">
+
+        <div class="section-title">
+
+          <div class="eyebrow">
+            FIND YOUR PERFECT FIT
+          </div>
+
+          <h2>
+            Sizing ♡
+          </h2>
+
+        </div>
+
+
+        <p class="sizing-note-main">
+          Send us a clear sizing photo so we can help
+          determine the correct nail sizes for your set.
+        </p>
+
+
+        <div class="size-steps">
+
+
+          <div class="size-step">
+
+            <div class="step-number">
+              01
+            </div>
+
+            <h3>
+              Grab a Quarter
+            </h3>
+
+            <p>
+              Place a U.S. quarter next to your nails
+              as a size reference.
+            </p>
+
+          </div>
+
+
+          <div class="size-step">
+
+            <div class="step-number">
+              02
+            </div>
+
+            <h3>
+              Take Your Photo
+            </h3>
+
+            <p>
+              Take a clear photo from directly above
+              with the quarter visible.
+            </p>
+
+          </div>
+
+
+          <div class="size-step">
+
+            <div class="step-number">
+              03
+            </div>
+
+            <h3>
+              Send It In Your DM
+            </h3>
+
+            <p>
+              Attach the photo when you message us
+              about your order.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="sizing-bottom">
+
+          <strong>
+            IMPORTANT:
+          </strong>
+
+          Your sizing applies to the
+          <strong>entire nail set</strong>,
+          not separately per nail.
+
+          ♡
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ORDER
+    ==================================================== -->
+
+    <section id="order">
+
+      <div class="order-card">
+
+        <div class="eyebrow">
+          READY TO ORDER?
+        </div>
+
+        <h2>
+          Let's Get Your Set ♡
+        </h2>
+
+        <p>
+          Send us a DM with the set you'd like,
+          your preferred length, and your sizing photo.
+          We'll confirm everything before payment.
+        </p>
+
+
+        <div class="order-list">
+
+          <div>
+            <strong>01.</strong>
+            Tell us which set you want.
+          </div>
+
+          <div>
+            <strong>02.</strong>
+            Choose your length.
+          </div>
+
+          <div>
+            <strong>03.</strong>
+            Send your sizing photo.
+          </div>
+
+          <div>
+            <strong>04.</strong>
+            We'll confirm your order and payment details.
+          </div>
+
+        </div>
+
+
+        <a
+          class="button"
+          href="https://ig.me/m/shophellodot"
+          target="_blank"
+        >
+          DM TO ORDER ♡
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         INFO
+    ==================================================== -->
+
+    <section>
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <div class="symbol">
+            ♡
+          </div>
+
+          <h3>
+            Handmade
+          </h3>
+
+          <p>
+            Every HelloDot set is handmade
+            with attention to detail.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="symbol">
+            ✦
+          </div>
+
+          <h3>
+            Shipping
+          </h3>
+
+          <p>
+            U.S. shipping is
+            <strong>$5 per order.</strong>
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="symbol">
+            ♡
+          </div>
+
+          <h3>
+            Payment
+          </h3>
+
+          <p>
+            Payment details are confirmed
+            with you through DM.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <h2>
+      HelloDot ♡
+    </h2>
+
+    <p>
+      Handmade Press-On Nails
+    </p>
+
+    <br>
+
+    <p>
+
+      <a
+        href="https://instagram.com/shophellodot"
+        target="_blank"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://tiktok.com/@shop.hellodot"
+        target="_blank"
+      >
+        TikTok
+      </a>
+
+      <a href="mailto:shopathellodot@gmail.com">
+        Email
+      </a>
+
+    </p>
+
+    <br>
+
+    <p>
+      Made with love ♡
+    </p>
+
+  </footer>
+
+</body>
+</html>
